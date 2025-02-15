@@ -1,0 +1,20 @@
+.cart-items-container {
+    direction: rtl;
+    border-radius: 4px;
+}
+
+.express-img {
+    height: 15px;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 992px) {
+    .cart-items-container {
+        border-radius: 0px;
+    }
+
+    .sec-2 {
+        border-radius: 4px;
+
+    }
+}

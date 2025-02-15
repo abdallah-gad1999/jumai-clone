@@ -1,0 +1,12 @@
+<div style="direction: rtl;">
+  <div class="d-flex  h-50 align-items-center p-all-10  text-center" [style.backgroundColor]="color">
+    <h5 class="m-auto text-black">{{title}}</h5>
+  </div>
+  <div class="d-flex p-all-10 bg-white flex-wrap align-items-center justify-center">
+    <a href=""  class="col-4 col-sm-4 col-md-2" *ngFor="let item of img">
+      <img [src]="item.img" alt=""
+      class="w-100 b-10 p-all-5">
+    </a>
+  </div>
+</div>
+

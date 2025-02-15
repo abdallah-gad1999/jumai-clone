@@ -1,0 +1,55 @@
+.inpox-cnt {
+  height: 384px;
+  width: 210px;
+
+}
+
+.sec-1,
+.sec-2 {
+  height: 48%;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+.sec-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  object-fit: cover;
+  flex-direction: column;
+}
+
+.sec-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+  text-align: end;
+  padding-right: 5px;
+}
+
+.sec-box h6 {
+  font-size: 12px;
+  font-weight: 700;
+  padding-right: 5px;
+}
+
+.sec-box img {
+  height: 30px;
+}
+
+.sec-box p {
+  font-size: 10px;
+  padding-right: 5px;
+  font-weight: 400;
+}
+
+.sec-2 {
+  background-image: url('/assets/images/ubdate/banners/218x184.png');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}

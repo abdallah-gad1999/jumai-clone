@@ -1,0 +1,55 @@
+.cart-side-container {
+    direction: rtl;
+}
+
+/* تنسيق الصورة */
+.product-image {
+    height: 70px;
+    border-radius: 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.quantity-input {
+    outline: none;
+    border: navajowhite;
+    display: flex;
+    text-align: center;
+    width: 40%;
+}
+
+.quantity-control {
+    justify-content: left;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #f68b1e;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 4px 8px 0 #ddd;
+}
+
+.quantity-btn:hover {
+    background-color: #d4771a;
+
+}
+
+.delete-item {
+    color: #f68b1e;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .cart-side-container {
+        margin-left: 20px;
+    }
+
+}
+

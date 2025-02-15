@@ -1,0 +1,286 @@
+<div class="Drawer-container" *ngIf="isTabletScreen">
+  <div id="header-sm">
+    <div class="d-flex align-items-center gap-3">
+      <div class="cartQty position-relative" [routerLink]="['/public/cart']">
+        <i class="bi bi-cart fs-2"></i>
+        <ng-container *ngIf="cart$ | async as cart">
+          <span class="qty badge" *ngIf="cart.length > 0">
+            {{ cart.length }}
+          </span>
+        </ng-container>
+      </div>
+      <div>
+        <i
+          class="bi bi-person gap-3 fs-2"
+          *ngIf="!isAuth"
+          [routerLink]="['/auth']"
+        ></i>
+        <i
+          class="bi bi-person-check f-2"
+          *ngIf="isAuth"
+          [routerLink]="['/user/account']"
+        ></i>
+      </div>
+
+      <i class="bi bi-search"></i>
+    </div>
+    <div class="d-flex" [routerLink]="['/public/home']">
+      <img
+        class="px-3"
+        style="height: 20px"
+        src="assets/images/JumiaLogo.png"
+        alt=""
+      />
+      <i
+        class="fa-solid fa-bars openDrawer"
+        aria-label="open-side-drawer"
+        (click)="toggleVisibility()"
+      ></i>
+    </div>
+  </div>
+  <div id="overlay" #overlay *ngIf="!isContentVisible">
+    <div class="sideDrawer">
+      <div id="header-sm-content">
+        <img
+          class="px-3"
+          style="height: 20px"
+          src="assets/images/JumiaLogo.png"
+          alt=""
+        />
+        <i
+          class="bi bi-x-lg fa-xmark closeDrawer"
+          style="font-size: 22px"
+          aria-label="close side drawer"
+          (click)="toggleVisibility()"
+        ></i>
+      </div>
+      <div>
+        <a href="" class="sdlt" id="first-sdlt">
+          <i class="bi bi-arrow-left-short" style="font-size: 12px"></i>
+          <span>هل تحتاج الي مساعدة؟</span>
+        </a>
+        <a class="sdlt" id="first-sdlt" [routerLink]="['/user/account']">
+          <i class="bi bi-arrow-left-short" style="font-size: 12px"></i>
+          <span>حسابي علي جوميا</span>
+        </a>
+        <a class="sdl" [routerLink]="['/user/order']">
+          <span class="mx-3">الطلبات</span>
+          <i class="bi bi-bag"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">التقييمات في انتظار ألتاكيد</span>
+          <i class="bi bi-pencil-square"></i>
+        </a>
+        <a class="sdl" [routerLink]="['/user/vouchers']">
+          <span class="mx-3">قسائم الشراء</span>
+          <i class="bi bi-ticket-perforated"></i>
+        </a>
+        <a class="sdl" [routerLink]="['/user/wishList']">
+          <span class="mx-3">المنتجات المحفوظة</span>
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a href="" class="sdlt" id="first-sdlt">
+          <a href="">عرض الكل</a>
+          <span>اقسامنا</span>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">سوبر ماركت</span>
+          <i class="bi bi-shop-window"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">موبايلات وتابلت</span>
+          <i class="bi bi-phone"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">منتجات الاطفال</span>
+          <i class="fa-solid fa-baby"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">الكترونيات</span>
+          <i class="bi bi-tv"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">الكمبيوتر</span>
+          <i class="bi bi-pc-display-horizontal"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">مستلزمات رياضية</span>
+          <i class="fa-solid fa-dumbbell"></i>
+        </a>
+        <a href="" class="sdl">
+          <span class="mx-3">العاب</span>
+          <i class="bi bi-controller"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- large header -->
+
+<section
+  class="header-lg bg-white d-flex align-items-center col-12"
+  *ngIf="!isTabletScreen"
+  appHeaderFixed
+>
+  <div class="cnt col-12 d-flex align-items-center gap-3 drop-categoreToggler">
+    <div
+      class="col-2 d-flex py-3 align-items-center gap-3 drob-downMenu"
+      aria-label="القائمة المنسدلة"
+    >
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-bars f-2"></i>
+        <div class="drop-categore">
+          <app-side-bar></app-side-bar>
+        </div>
+      </div>
+      <a class="d-flex" href="" [routerLink]="['/public/home']">
+        <img src="/assets/images/JumiaLogo.png" alt="صورة جوميا" />
+      </a>
+    </div>
+
+    <div
+      class="col-5 d-flex main-search align-items-center gap-2 px-2"
+      aria-label="البحث"
+    >
+      <input
+        class="search-inp col-10"
+        type="text"
+        #searchInp
+        placeholder="البحث عن منتجات,علامات تجارية,الاقسام"
+      />
+      <button class="search-btn col-2" (click)="search(searchInp.value)">
+        البحث
+      </button>
+      <i class="bi bi-search"></i>
+    </div>
+    <div
+      class="col-5 d-flex align-items-center bg-seccess menu-items"
+      aria-label="قوائم المساعدة"
+    >
+      <div
+        class="col-5 d-flex align-items-center justify-content-evenly menu-item"
+        aria-label="قائمة تسجيل الدخول والحسابات"
+        (click)="toggleDropdownMenu()"
+        [class.change-bg]="dropDownMenuVisible"
+      >
+        <i class="bi bi-person f-2" *ngIf="!isAuth"></i>
+        <i class="bi bi-person-check f-2" *ngIf="isAuth"></i>
+        <div>
+          <p *ngIf="!isAuth">تسجيل الدخول</p>
+          <div *ngIf="isAuth" class="d-flex">
+            <p *ngIf="user$ | async as user">مرحبا : {{ user.firstName }}</p>
+          </div>
+        </div>
+        <i
+          class="bi bi-chevron-down"
+          style="font-size: 10px; font-weight: bold"
+        ></i>
+        <div class="drop-menu flex-column b-4" *ngIf="dropDownMenuVisible">
+          <div aria-label="ادوات المستخدم">
+            <!-- not LogIn -->
+            <div class="und-line" aria-label="تسجيل الدخول" *ngIf="!isAuth">
+              <a
+                class="main-btn text-white f-10 m-2 my-3"
+                href=""
+                aria-label="زر تسجيل الدخول"
+                [routerLink]="['/auth/logIn']"
+              >
+                تسجيل الدخول
+              </a>
+            </div>
+            <div
+              class="bg danger und-line user-account d-flex flex-column justify-content-center"
+              aria-label="الروابط الخاصة بالمستخدم"
+            >
+              <a
+                href=""
+                class="acc-item align-items-center d-flex gap-2"
+                [routerLink]="['/user/account']"
+              >
+                <i class="bi bi-person f-2"></i>
+                <p>الحساب</p>
+              </a>
+
+              <a
+                href=""
+                class="acc-item align-items-center d-flex gap-2"
+                [routerLink]="['/user/message']"
+              >
+                <i class="bi bi-envelope f-2"></i>
+                <p>صندوق الرسائل الواردة</p>
+              </a>
+
+              <a
+                href=""
+                class="acc-item align-items-center d-flex gap-2"
+                [routerLink]="['/user/order']"
+              >
+                <i class="bi bi-box2 f-2"></i>
+                <p>الطلبات</p>
+              </a>
+
+              <a
+                href=""
+                class="acc-item align-items-center d-flex gap-2"
+                [routerLink]="['/user/wishList']"
+              >
+                <i class="bi bi-heart f-2"></i>
+                <p>المنتجات المحفوظة</p>
+              </a>
+
+              <a
+                href=""
+                class="acc-item align-items-center d-flex gap-2"
+                [routerLink]="['/user/vouchers']"
+              >
+                <i class="bi bi-ticket-perforated f-2"></i>
+                <p>قسائم الشراء</p>
+              </a>
+            </div>
+            <div
+              class=""
+              aria-label="تسجيل الخروج"
+              *ngIf="isAuth"
+              (click)="signout()"
+            >
+              <a
+                class="logOut d-block f-10 text-center p-3"
+                href=""
+                aria-label="زر تسجيل الخروج"
+              >
+                تسجيل الخروج
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-3 d-flex align-items-center gap-1 menu-item"
+        aria-label="قائمة المساعدة "
+      >
+        <i class="bi bi-question-circle f-2"></i>
+        <p>المساعدة</p>
+      </div>
+
+      <div
+        class="col-3 d-flex align-items-center justify-content-evenly menu-item"
+        aria-label="سلة التسوق"
+        [routerLink]="['/public/cart']"
+      >
+        <div class="cartQty position-relative">
+          <i class="bi bi-cart f-2"></i>
+
+          <ng-container *ngIf="cart$ | async as cart">
+            <span class="qty badge" *ngIf="cart.length > 0">
+              {{ cart.length }}
+            </span>
+          </ng-container>
+        </div>
+
+        <p>سلة التسوق</p>
+      </div>
+    </div>
+  </div>
+</section>

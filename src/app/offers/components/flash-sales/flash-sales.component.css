@@ -1,0 +1,76 @@
+@media only screen and (min-width: 992px) {
+  .card-img {
+    content: url('/assets/images/ubdate/offers/1200x1200AR\ flas.png');
+  }
+}
+
+.item {
+  position: relative;
+  cursor: pointer;
+}
+
+.header {
+  background-color: var(--banner-bg);
+}
+
+.prd-offers {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 1;
+}
+
+.prd-offers p {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--btn-color);
+  border-radius: 4px;
+  padding: 3px;
+
+}
+
+.item-img {
+  width: 100%;
+  position: relative;
+}
+
+.item-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.jumia-store {
+  background-color: var(--bg-dark-blue);
+  display: block;
+  width: fit-content;
+}
+
+.prd-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.padg-discount {
+  background-color: antiquewhite;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+.range {
+  content: "";
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--btn-color);
+}
+
+
+.items-container{
+  flex-wrap: wrap;
+}

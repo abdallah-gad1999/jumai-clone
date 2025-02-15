@@ -1,0 +1,19 @@
+.sec-hader{
+  background-color: var(--Beige-Light);
+  direction: rtl;
+}
+*{
+  overflow: hidden;
+}
+@media only screen and (max-width: 959px) {
+  .sec-1 {
+    content: url('/assets/images/ubdate/banners/home/1sm.png');
+  }
+  .sec-2 {
+    content: url('/assets/images/ubdate/banners/home/2sm.png');
+  }
+  .sec-3 {
+    content: url('/assets/images/ubdate/banners/home/3sm.png');
+
+  }
+}

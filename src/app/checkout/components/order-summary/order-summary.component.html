@@ -1,0 +1,34 @@
+<div class="summary-container bg-white b-4" *ngIf="order$ | async as order">
+  <section class="und-line">
+    <div class="p-3 py-1">
+      <p>ملخص الطلبية</p>
+    </div>
+  </section>
+  <section class="delevry-ditails und-line" aria-label="عدد المنتجات والاسعار">
+    <div class="order-details">
+      <div class="px-3 py-2 d-flex justify-content-between">
+        <p class="f-15">الاجمالي</p>
+        <p class="f-15">{{ order.totalPrice | currency : "EGP" }}</p>
+      </div>
+      <div class="px-3 py-2 d-flex justify-content-between">
+        <p>توصيل مجاني</p>
+        <p class="text-success">-53 جنية</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="delevry-ditails und-line" aria-label="عدد المنتجات والاسعار">
+    <div class="order-details">
+      <div class="px-3 py-2 d-flex justify-content-between">
+        <p>ألاجمالي</p>
+        <p class="f-15">{{ order.totalPrice | currency : "EGP" }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-flex justify-content-center p-2">
+    <button class="main-btn f-15 col-10" (click)="confirmorder()">
+      تأكيد الطلبية
+    </button>
+  </section>
+</div>

@@ -1,0 +1,123 @@
+.slider-container {
+  position: relative;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+
+.header {
+  border-radius: 4px 4px 0px 0px;
+  height: 50px;
+  color: #fff;
+  overflow: hidden;
+}
+.header h6 {
+font-size: 18px;
+font-weight: 600;
+}
+
+
+.items-cnt {
+  height: 250px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+}
+
+
+.item {
+  flex: 0 180px;
+  min-width: 180px;
+  max-width: 180px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform ease-in 0.2s;
+}
+
+.item:hover {
+
+  transform: scale(1.01);
+  transform-origin: center center;
+  box-shadow: 0 4px 6px 6px rgba(0, 0, 0, 0.04);
+}
+
+
+.item-img {
+  height: 70%;
+  position: relative;
+}
+
+.item-img img {
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.offer {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 3px;
+  background: #FEF3E9;
+}
+
+.item-title {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #888;
+}
+
+
+.btn-left,
+.btn-right {
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+  height: 40px;
+  width: 40px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #888;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  background-color: #ddd;
+}
+
+.btn-right {
+  right: 20px;
+}
+
+.btn-left {
+  left: 20px;
+}
+
+
+.offer {
+  color: var(--btn-color);
+}
+
+
+@media only screen and (min-width: 992px) {
+  .items-cnt {
+
+    overflow-x: hidden;
+
+  }
+}

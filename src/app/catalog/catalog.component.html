@@ -1,0 +1,36 @@
+<div>
+  <app-nav />
+  <app-nav-sec2 />
+  <app-header />
+</div>
+<div *ngIf="products$ as products; else noProducts">
+  <div
+    class="cnt my-3 d-flex flex-column gap-4 flex-lg-row justify-content-between"
+  >
+    <section class="d-none d-lg-flex col-lg-3 b-4 mt-4 bg-white">
+      <app-side-filter class="col-12" />
+    </section>
+    <section class="col-12 col-lg-9 b-4 my-lg-4">
+      <app-products />
+    </section>
+  </div>
+</div>
+<ng-template #noProducts>
+  <div class="cnt my-5 d-flex flex-column gap-4 align-items-center">
+    <img
+      src="/assets/images/ubdate/icons/notFound.svg"
+      alt="No products found"
+      class="d-block notFound-img text center"
+    />
+    <ol class="text-center list-style-none">
+      <li>- تحقق من أخطاء الكتابة</li>
+      <li>- حاول البحث باستخدام كلمات قصيرة وسهلة</li>
+      <li>- حاول البحث عن مصطلحات عامة - يمكنك بعد ذلك فلترة نتائج البحث</li>
+    </ol>
+
+    <button class="main-btn d-flex">الرجوع للصفحة الرئيسية</button>
+  </div>
+</ng-template>
+<div>
+  <app-footer />
+</div>

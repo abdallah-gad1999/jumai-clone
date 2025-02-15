@@ -1,0 +1,25 @@
+slick-carousel {
+  display: block;
+}
+
+slick-carousel img {
+  width: 100%;  /* تأكد أن الصور تغطي العرض بشكل جيد */
+  object-fit: cover;
+}
+.parent-container {
+  margin-top: 20px; /* لتجنب تداخل المحتوى مع الهيدر */
+}
+
+app-header {
+  position: sticky;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: visible;
+}
+
+router-outlet {
+  overflow: hidden;
+  position: relative;
+}

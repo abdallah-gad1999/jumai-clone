@@ -1,0 +1,80 @@
+<div class="sec-container col-12" *ngIf="order$ | async as order">
+  <div class="bg-white b-4">
+    <section class="header und-line" aria-label="عنوان الصفحة">
+      <div class="d-flex px-2 py-1 gap-2 align-items-center">
+        <i
+          class="bi bi-check-circle-fill d-flex"
+          [ngStyle]="{ color: order?.address  ? 'green' : '#ddd' }"
+        ></i>
+        <p>1. عنوان العميل</p>
+      </div>
+    </section>
+    <!-- here -->
+    <section aria-label="دليل العناوين">
+      <div class="und-line">
+        <div class="p-3">
+          <p class="f-1 py-1">دليل العناوين (1)</p>
+          <section aria-label="العناوين الخاصة بالعميل">
+            <ng-container *ngIf="order?.address; else AddressNotFound">
+              <div
+                class="adress-item  p-3 py-4 d-flex justify-content-between align-items-end align-items-lg-start"
+              >
+                <div>
+                  <h6 class="m-0 d-flex flex-column gap-3  f-15 user-name">
+                    {{
+                      (order?.address?.firstName || "") +
+                        " " +
+                        (order?.address?.lastName || "")
+                    }}
+                  </h6>
+                  <p class="adress f-10">{{order?.address?.address}}</p>
+                  <p class="f-10">{{order?.address?.phoneNumber}}</p>
+                </div>
+                <div class="d-flex align-items-center change-adress">
+                  <p [routerLink]="['/checkout/address/edit']">تغيير</p>
+                  <i class="bi bi-pen-fill d-flex"></i>
+                </div>
+              </div>
+            </ng-container>
+
+            <ng-template #AddressNotFound>
+              <div
+                class="adress-item p-3 py-4 d-flex justify-content-between align-items-end align-items-lg-start"
+              >
+                <div>
+                  <h6>لم تقم بأضافة عنوان حتي الان</h6>
+                </div>
+                <div class="d-flex align-items-center change-adress">
+                  <p [routerLink]="['/checkout/address/edit']">
+                    أضافة عنوان جديد
+                  </p>
+                  <i class="bi bi-pen-fill d-flex"></i>
+                </div>
+              </div>
+            </ng-template>
+
+            <div
+              class="add-more-adress d-flex align-items-center gap-2 mt-3 main-color"
+            >
+              <i class="bi bi-plus-lg d-flex f-2"></i>
+              <p class="f-1">اضف عنوان</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section
+        class="m-2 p-2 gap-3 d-flex align-items-center justify-content-end"
+        aria-label="تأكيد العنوان"
+      >
+        <button
+          class="main-btn cancel-btn f-15"
+          [routerLink]="['/checkout/address']"
+        >
+          الغاء
+        </button>
+        <button class="main-btn f-15">تأكيد العنوان</button>
+      </section>
+    </section>
+  </div>
+</div>

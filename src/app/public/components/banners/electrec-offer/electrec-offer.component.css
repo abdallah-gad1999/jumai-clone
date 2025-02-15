@@ -1,0 +1,19 @@
+.sec-hader{
+  background-color: var(--Sky-Blue);
+  direction: rtl;
+}
+*{
+  overflow: hidden;
+}
+@media only screen and (max-width: 959px) {
+  .sec-1 {
+    content: url('/assets/images/ubdate/banners/electrec/sm1.png');
+  }
+  .sec-2 {
+    content: url('/assets/images/ubdate/banners/electrec/sm2.png');
+  }
+  .sec-3 {
+    content: url('/assets/images/ubdate/banners/electrec/sm3.png');
+
+  }
+}

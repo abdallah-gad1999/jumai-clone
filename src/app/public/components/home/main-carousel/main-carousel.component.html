@@ -1,0 +1,34 @@
+
+
+
+<div class="slider-wrapper" id="swiper-sm">
+  <swiper-container
+    class="mySwiper"
+    scrollbar-hide="true"
+    slides-per-view="1.1"
+    centered-slides="true"
+    space-between="5"
+    autoplay-delay="2500"
+  >
+  <swiper-slide *ngFor="let item of slideImgs"
+      ><a href="#"><img [src]="item.img" alt="" /></a
+    ></swiper-slide>
+  </swiper-container>
+</div>
+
+<div class="slider-wrapper" id="swiper-lg">
+  <swiper-container
+    class="mySwiper"
+    slides-per-view="1.1"
+    centered-slides="true"
+    space-between="5"
+    effect="fade"
+    pagination="true"
+    navigation="true"
+    autoplay-delay="5000"
+  >
+    <swiper-slide *ngFor="let item of slideImgs"
+      ><a href="#"><img [src]="item.img" alt="" /></a
+    ></swiper-slide>
+  </swiper-container>
+</div>

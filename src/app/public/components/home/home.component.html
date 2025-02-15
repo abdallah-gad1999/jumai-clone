@@ -1,0 +1,129 @@
+<div class="container-all">
+  <div class="router-container">
+    <div class="cnt d-flex justify-content-around align-items-center">
+      <div class="sec-1">
+        <app-inpox></app-inpox>
+      </div>
+      <div class="cars">
+        <app-main-carousel></app-main-carousel>
+      </div>
+      <div class="sec-2">
+        <app-side-bar></app-side-bar>
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt banner">
+    <section class="sec">
+      <app-sec-1 [banner]="banners"></app-sec-1>
+    </section>
+
+    <section class="sec">
+      <app-big-savings-sec-3></app-big-savings-sec-3>
+    </section>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="FlashSale | async"
+          [title]="'Flash Sales كل يوم!!'"
+          [color]="'#E61601'"
+          [textColor]="'white'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <section class="sec">
+      <app-find-offers></app-find-offers>
+    </section>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="BestSeller | async"
+          [title]="'المنتجات المدعومة'"
+          [color]="'#FCE7BB'"
+          [textColor]="'black'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="FlashSale | async"
+          [title]="'المنتجات الافضل مبيعا'"
+          [color]="'#ffff'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="Featured | async"
+          [title]="'المنتجات المضافة حديثا!'"
+          [color]="'#ffff'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <section class="sec">
+      <app-affordable-prices></app-affordable-prices>
+    </section>
+
+    <section class="sec b-4" aria-label="fashion">
+      <app-fashion-offers
+        [img]="fashion"
+        [title]="'تشكيلة ملابس الشتاء'"
+        [color]="'#EDE5F3'"
+      />
+    </section>
+
+    <section class="sec b-4" aria-label="beauty face">
+      <app-fashion-offers
+        [img]="beauty"
+        [title]="'روتين بشرتك للنساء'"
+        [color]="'#FDECF0'"
+      />
+    </section>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="FlashSale | async"
+          [title]="'اشتري اجدد التريندات'"
+          [color]="'#FCE7BB'"
+          [textColor]="'black'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <section class="sec b-4">
+      <app-electrec-offer />
+    </section>
+
+    <div class="cnt p-0">
+      <section class="sec b-4">
+        <app-slider
+          [products]="phone | async"
+          [title]="'اشتري اجدد الموبايلات'"
+          [color]="'#FDECF0'"
+          [textColor]="'black'"
+        ></app-slider>
+      </section>
+    </div>
+
+    <section class="sec b-4">
+      <app-home-ban />
+    </section>
+
+    <section class="sec b-4">
+      <app-furniture-offer></app-furniture-offer>
+    </section>
+
+    <section class="sec">
+      <app-sec-1 [banner]="banners2"></app-sec-1>
+    </section>
+  </div>
+</div>

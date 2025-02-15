@@ -1,0 +1,19 @@
+.header {
+  box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+app-check-adress {
+  width: 100%;
+  display: block;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .checkout-steps {
+    width: 73%;
+  }
+
+  .order-Summary {
+    width: 25%;
+  }
+}

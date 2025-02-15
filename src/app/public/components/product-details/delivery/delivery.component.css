@@ -1,0 +1,46 @@
+
+.font-10 {
+  font-size: 10px;
+  gap: 5px;
+}
+.express-img {
+  height: 15px;
+}
+
+
+select {
+  height: 50px;
+  padding: 0 10px;
+  border: 1.5px solid #ddd;
+  color: var(--p-color);
+  font-size: 15px;
+  outline: none;
+}
+
+select:focus {
+  border: 1px solid var(--btn-color);
+}
+
+.opt-item {}
+
+.opt-item span {
+  border: 1px solid #ddd;
+  width: 15%;
+  height: 50px;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .delivery-return {
+    background-color: white;
+  }
+
+  .location-head {
+    font-size: 15px;
+  }
+
+  .opt-item span {
+    width: 20%;
+  }
+
+}

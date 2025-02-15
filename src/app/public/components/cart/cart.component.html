@@ -1,0 +1,60 @@
+<!-- عند عدم وجود منتجات في السلة -->
+<div
+    *ngIf="(products$ | async)?.length === 0"
+    class="text-center bg-white d-block cnt b-4  p-5 m2-4 empty-cart"
+>
+    <img
+        src="/assets/images/ubdate/user/cart.svg"
+        alt="السلة فارغة"
+        class="empty-cart-image"
+    />
+    <p class="mt-3 b">عربة التسوق فارغة</p>
+    <span class="f-1 d-block my-3">تصفح الفئات واكتشف أفضل عروضنا! </span>
+    <button class="main-btn d-flex mt-3 m-auto" [routerLink]="['/public/home']">
+        بدء التسوق
+    </button>
+</div>
+
+<!-- عند وجود منتجات في السلة -->
+<div *ngIf="(products$ | async)?.length > 0">
+    <section
+        class="cnt d-flex flex-wrap justify-content-between cart-container py-3"
+    >
+        <!-- العناصر -->
+        <section class="cart-items col-12 col-lg-9 order-2 order-lg-2">
+            <app-cart-items></app-cart-items>
+        </section>
+        <!-- القسم الجانبي -->
+        <section class="cart-side col-12 col-lg-3 order-1 order-lg-1 b-4">
+            <app-cart-side></app-cart-side>
+        </section>
+    </section>
+
+    <section class="mx-lg-0 my-3 b-4 b-shadow d-lg-none">
+        <div class="bg-white d-flex justify-content-evenly p-1 gap-1">
+            <div
+                class="col-2 d-flex align-items-center justify-content-center contact-us"
+            >
+                <button>
+                    <i class="bi bi-telephone-fill"></i>
+                </button>
+            </div>
+            <div
+                aria-label="اضافة الي سلة التسوق"
+                class="col-9 add-to-cart"
+                (click)="getitem()"
+            >
+                <button class="main-btn">الاجمالي</button>
+                <i class="bi bi-cart-plus f-1"></i>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="cnt p-0 mt-5">
+    <app-slider
+        [title]="'المنتجات الافضل مبيعا'"
+        [color]="'#fff'"
+        [products]="BestSeller | async"
+    ></app-slider>
+</div>

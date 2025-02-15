@@ -1,0 +1,45 @@
+<section class="sec-1 b-4 mb-3 mx-2 mx-lg-0">
+  <!-- عنوان القسم -->
+  <div class="und-line">
+    <h6 class="p-3 pb-1 res-f">مواصفات المنتج</h6>
+  </div>
+
+  <!-- تفاصيل المنتج -->
+  <div class="bg-white b-4">
+    <p class="prd-details p-3 f-10">
+      {{ product$.description }}
+    </p>
+  </div>
+</section>
+
+<section class="sec-2 my-3 bg-white b-4">
+  <!-- عنوان القسم -->
+  <div class="und-line d-flex align-items-center">
+    <h6 class="p-3 pb-1 res-f">المواصفات</h6>
+  </div>
+
+  <!-- مواصفات المنتج الرئيسية -->
+  <div class="col-12 d-flex flex-wrap justify-content-between p-3">
+    <div class="detalis-item b-4">
+      <div class="und-line">
+        <p class="m-0 p-3">المواصفات الرئيسية</p>
+      </div>
+      <div class="prd-details p-3 px-4">
+        <ol>
+          <li *ngFor="let item of product$.details">{{ item }}</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="detalis-item b-4">
+      <div class="und-line">
+        <p class="f-15 m-0 p-3">المواصفات</p>
+      </div>
+      <div class="p-3">
+        <p>موديل :  {{product$.model}}</p>
+        <p>اللون :  {{product$.color}}</p>
+        <p>بلد الصنع :  {{product$.made}}</p>
+      </div>
+    </div>
+  </div>
+</section>

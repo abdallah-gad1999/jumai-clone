@@ -1,0 +1,17 @@
+.card-item{
+  border: 1px solid #88888888;
+  width: 49%;
+}
+.title{
+  font-size: 15px;
+  font-weight: 400
+}
+
+.idet i{
+font-size: 15px;
+color: var(--btn-color);
+}
+
+.user-details{
+  font-size: 13px;
+}

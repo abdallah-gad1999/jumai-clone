@@ -1,0 +1,53 @@
+.ofer-sec {
+  background-color: white;
+  width: 100%;
+}
+
+.ofer-sec a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+
+}
+
+.ofer-sec a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sec-head {
+  background-color: var(--Champagne-color);
+  height: 50px;
+}
+
+.sec-4{
+  padding: 10px;
+  background-color: white;
+}
+
+.sec-3 a {
+  display: block;
+}
+
+*{
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 959px) {
+  .sec-1 {
+    content: url('/assets/images/ubdate/banners/descovre-offers/300x300ar-sm1.gif');
+  }
+  .sec-2 {
+    content: url('/assets/images/ubdate/banners/descovre-offers/300x300-sm-2.png');
+  }
+  .sec-3 {
+    content: url('/assets/images/ubdate/banners/descovre-offers/300X300AR-sm-3.png');
+  }
+  .sec-4{
+    content: url('/assets/images/ubdate/banners/descovre-offers/720x240AR.png');
+  }
+}

@@ -1,0 +1,85 @@
+<div class="flash-container my-3">
+  <section class="card-item bg-white b-4">
+    <img
+      src="/assets/images/ubdate/offers/720x240AR flash.png"
+      class="card-img p-2 b-4"
+      alt=""
+    />
+  </section>
+
+  <section aria-label="قائمة المنتجات" class="my-3 b-4">
+    <div
+      class="header text-white p-3 d-flex justify-content-between align-items-center"
+    >
+      <div class="d-flex fs-6 fs-lg-5 gap-2">
+        <i class="bi bi-tag-fill"></i>
+        <p>فلاش سيل</p>
+      </div>
+      <div class="d-flex gap-1 align-items-center f-10">
+        <p>الترتيب حسب :</p>
+        <p>مشهور</p>
+        <i class="bi bi-chevron-compact-down d-flex"></i>
+      </div>
+    </div>
+
+    <ng-container *ngIf="FlashSale | async as product">
+      <div class="bg-lg-white d-flex items-container p-3">
+        @for (item of product;track $index) {
+        <div class="item col-6 col-lg-2 bg-white">
+          <div class="prd-offers text-white">
+            <p>مرشح للشحن المجاني*</p>
+          </div>
+          <div class="item-img">
+            <img [src]="item.images" alt="" />
+            <div class="addTo-weshlist"  (click)="AddToFav(item.id)">
+              <i class="bi bi-heart"></i>
+            </div>
+          </div>
+
+          <section class="d-flex flex-column gap-1 p-1">
+            <div class="jumia-store f-10 b-4 text-white">
+              <p class="p-1">المتجر الرسمي</p>
+            </div>
+            <div class="prd-name f-10" (click)="navigate(item.id)">
+              {{ item.name }}
+            </div>
+            <div>
+              <p class="new-price f-1">
+                {{
+                  calculateDiscountedPrice(item.price, item.discount)
+                    | currency : "EGP" : "symbol"
+                }}
+              </p>
+              <span class="d-flex align-items-center gap-2">
+                <p class="old-price f-1">
+                  {{ item.price | currency : "EGP" : "symbol" }}
+                </p>
+                <p class="discount-badge f-10 b-4">%{{ item.discount }}</p>
+              </span>
+            </div>
+            <div class="d-flex" style="color: #888">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <div class="d-flex flex-column f-10 gap-2">
+              @switch (item.stock) { @case (1) { منتج 1 فقط يوجد } @default {
+              <p>يوجد {{ item.stock }} من المنتجات</p>
+
+              } }
+              <p class="range"></p>
+            </div>
+            <div class="d-flex justify-content-center" (click)="addtoCart(item.id)">
+              <button class="main-btn p-2 f-15 col-12">
+                اضافة لسلة التسوق
+              </button>
+            </div>
+          </section>
+        </div>
+        }
+      </div>
+    </ng-container>
+  </section>
+</div>

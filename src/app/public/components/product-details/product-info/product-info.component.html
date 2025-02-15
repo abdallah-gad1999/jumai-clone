@@ -1,0 +1,82 @@
+<ng-container class="p-1 und-line" *ngIf="product$ as prd">
+  <div class="store d-flex" aria-label="store-name">
+    <p class="text-white p-1 f-10 b-4">المتجر الرسمي</p>
+  </div>
+  <div class="prd-brice">
+    <h2>{{ prd.name }}</h2>
+  </div>
+  <div class="und-line">
+    <p>ماركة : {{ prd.brand }}</p>
+  </div>
+  <div
+    class="d-flex flex-column m-auto my-2 justify-content-between b-4 price-cnt align-items-start"
+  >
+    <div
+      class="flash-sell d-flex w-100 justify-content-between align-items-center p-1"
+    >
+      <span class="d-flex gap-2 align-items-center">
+        <i class="bi bi-tag-fill" style="color: gold"></i>
+        <p class="text-white f-10">فلاش سيل</p>
+      </span>
+      <p class="f-10 text-white">تبدأ في: ١٨ ديسمبر, ١١:٠٠</p>
+    </div>
+    <div class="price-container align-items-start d-flex flex-column p-3">
+      <div class="prices d-flex gap-1 align-items-center gap-2 p-0">
+        <div class="discount-badge">{{ prd.discount }}%</div>
+        <span class="old-price">{{ prd.price | currency : "EGP" }}</span>
+        <span class="new-price">{{
+          calculateDiscount(prd.price, prd.discount) | currency : "EGP"
+        }}</span>
+      </div>
+      <div *ngIf="prd.stock == 0" class="d-flex text-dabger align-items-center">
+        <p class="text-danger f-10">{{ prd.stock }} نأسف لقد نفذ المنتج</p>
+      </div>
+      <div
+        *ngIf="prd.stock <= 2 && prd.stock < 4"
+        class="d-flex text-info align-items-center gap-2"
+      >
+        <p class="f-10">{{ prd.stock }} باقي منتجات</p>
+        <i class="bi bi-exclamation-octagon"></i>
+      </div>
+      <div
+        *ngIf="prd.stock >= 4"
+        class="d-flex text-success align-items-center gap-2"
+      >
+        <p class="text-success f-10">{{ prd.stock }} منتجات متوفرة</p>
+        <i class="bi bi-basket2-fill"></i>
+      </div>
+    </div>
+  </div>
+  <p class="f-10">توصيل مجاني عند شرائك من منتجات جوميا اكسبريس</p>
+  <div class="d-flex gap-2 my-1">
+    <p class="text-success f-10">شحن مجاني الي 6 اكتوبر</p>
+    <a href="" class="text-info f-10">عرض خيارات اخري</a>
+  </div>
+  <div class="evaluation d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-2">
+      <span class="d-flex">
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+      </span>
+      <p class="evaluation-item f-10">{{ prd.rating }} من التقييمات الموثقة</p>
+    </div>
+    <div
+  
+      aria-label="الاضافة الي قائمة المنتجات المفضلة"
+    >
+      <i
+        class="bi bi-heart p-3"
+        style="color: rgb(168, 149, 41); font-size: 20px"
+      ></i>
+    </div>
+  </div>
+  <div aria-label="اضافة الي سلة التسوق" class="my-1 add-to-cart">
+    <button class="main-btn col-12" (click)="addtoCart(prd.id)">
+      اضافة لسلة التسوق
+    </button>
+    <i class="bi bi-cart-plus"></i>
+  </div>
+</ng-container>

@@ -1,0 +1,13 @@
+.adress-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+
+.change-adress {
+  color: var(--btn-color);
+  font-size: 13px;
+
+}
+

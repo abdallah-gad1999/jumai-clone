@@ -1,0 +1,7 @@
+.auth-container{
+  height: 100%;
+}
+
+router-outlet{
+  height: 100%;
+}

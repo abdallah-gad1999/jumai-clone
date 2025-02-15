@@ -1,0 +1,102 @@
+<div class="cart-side-container b-4" *ngIf="products$ | async as products">
+    <div class="header bg-lg-white b-4 und-line">
+        <p class="res-f p-2">سلة التسوق ({{ products.length }})</p>
+    </div>
+    <div
+        class="cart-items mx-2 b-4 mx-lg-0 bg-white"
+        aria-label="المنتجات المختارة في السلة"
+    >
+        <div class="cart-item und-line pt-1" *ngFor="let item of products">
+            <!-- الصورة والمعلومات -->
+            <div class="d-flex">
+                <!-- صورة المنتج -->
+                <div
+                    class="col-2 col-lg-2 p-2 d-flex justify-content-center align-items-center"
+                >
+                    <img [src]="item?.images" alt="" class="product-image" />
+                </div>
+                <!-- معلومات المنتج -->
+                <div class="item-info d-flex justify-content-between col-10">
+                    <div>
+                        <p class="item-name f-1">
+                            {{ item?.name }}
+                        </p>
+                        <span [ngSwitch]="item?.stock" class="f-10">
+                            <p class="text-danger" *ngSwitchCase="0">
+                                <i class="bi bi-ban"></i> نأسف لقد نفذ المنتج
+                            </p>
+                            <p class="text-sucess" *ngSwitchCase="5">
+                                {{ item.stock }} من الوحدات المتبقية
+                            </p>
+
+                            <p class="text-success" *ngSwitchDefault>
+                                {{ item.stock }} من الوحدات المتبقية
+                            </p>
+                        </span>
+
+                        <span
+                            class="product-offer"
+                            aria-label="العروض الخاصة بالمنتج"
+                        >
+                            <img
+                                style="height: 20px"
+                                src="/assets/images/ubdate/icons/jumia-express.png"
+                                alt="Jumia Express"
+                            />
+                        </span>
+                    </div>
+                    <div class="price-cnt px-3 gap-2 align-items-center">
+                        <p class="new-price f-1">
+                            {{
+                                calcDiscount(item?.price, item?.discount)
+                                    | currency : "EGP" : "symbol" : "1.2-2"
+                            }}
+                        </p>
+                        <p class="old-price f-1">
+                            {{
+                                item?.price
+                                    | currency : "EGP" : "symbol" : "1.2-2"
+                            }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- الإزالة والإضافة -->
+            <div
+                class="idet-item d-flex justify-content-between align-items-center col-12 px-4 pb-3"
+                aria-label="إزالة وإضافة منتجات في السلة"
+            >
+                <div
+                    class="d-flex gap-2 align-items-center delete-item hov"
+                    (click)="removeItem(item?.id)"
+                >
+                    <i class="bi bi-trash f-15"></i>
+                    <p class="m-0 ms-2 f-15">إزالة</p>
+                </div>
+                <div class="quantity-control d-flex align-items-center gap-2">
+                    <button
+                        class="quantity-btn"
+                        (click)="decreaseItem(item?.id)"
+                        [disabled]="item?.qty.qty == 1"
+                    >
+                        <i class="bi bi-dash"></i>
+                    </button>
+                    <input
+                        type="text"
+                        class="quantity-input"
+                        name=""
+                        id=""
+                        [value]="item?.qty.qty || 1"
+                    />
+
+                    <button
+                        class="quantity-btn"
+                        (click)="addtoCart(item?.id, 1)"
+                    >
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

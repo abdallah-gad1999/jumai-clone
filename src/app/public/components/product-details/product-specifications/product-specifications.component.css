@@ -1,0 +1,43 @@
+
+
+.sec-2 {
+  display: none;
+}
+
+.prd-head {
+  font-size: 12px;
+  font-weight: 400;
+}
+.prd-details{
+  font-size: 10px;
+}
+.prd-details ol{
+  list-style: circle;
+}
+
+
+.detalis-item {
+  border: 1px solid #ddd;
+  width: 49%;
+}
+
+@media only screen and (min-width: 992px) {
+  .sec-1 {
+    margin: 0;
+    background-color: #fff;
+
+  }
+
+  .sec-2 {
+    display: block;
+  }
+
+  .prd-head {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .prd-details{
+    font-size: 15px;
+  }
+
+}

@@ -1,0 +1,286 @@
+:root {
+  --main-bg-color: #f68b1e;
+  --ancor-color: #535357;
+  --p-color: #313133
+}
+
+/* side drawer */
+.Drawer-container {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  direction: ltr;
+}
+
+#header-sm {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+#header-sm {
+  align-items: center;
+}
+
+#header-sm div i {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#sm-inp {
+  width: 98%;
+  display: block;
+  padding: 2px;
+  border-radius: 15px;
+  margin: 5px auto;
+  position: relative;
+  border-color: #ddd;
+}
+
+.search-icon-sm {
+  position: absolute;
+  right: 30px;
+  top: 132px;
+}
+
+#overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #dddddd4a;
+  justify-content: end;
+  transition: all 3s;
+  z-index: 1111;
+}
+
+#overlay #header-sm-content {
+  display: block;
+  text-align: end;
+  padding: 20px;
+
+}
+
+
+.sideDrawer {
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  display: block;
+  overflow-y: auto;
+  text-align: end;
+  position: absolute;
+}
+
+
+.sdlt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 10px;
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sdlt::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  color: #ddd;
+  width: 100%;
+  top: 0px;
+  left: 0;
+  border-top: 1px solid;
+}
+
+.sdl {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sdlt a {
+  color: var(--main-bg-color);
+}
+
+.sdl i {
+  color: var(--ancor-color);
+  font-size: 20px;
+}
+
+.closeDrawer,
+.openDrawer {
+  cursor: pointer;
+}
+
+/*
+large Screen Header */
+.header-lg {
+  height: 70px;
+  box-shadow: 0 2px 3px 1px #ddd;
+}
+
+.drob-downMenu img {
+  height: 22px;
+  object-fit: contain;
+}
+
+.main-search {
+  position: relative;
+}
+
+.search-inp,
+.search-btn {
+  outline: none;
+  border-radius: 4px;
+  margin: 2px;
+  border: 1px solid #8888888c;
+  direction: rtl;
+  height: 40px;
+}
+
+.search-inp {
+  padding-right: 40px;
+}
+
+.search-inp::placeholder {
+  font-size: 13px;
+  text-align: start;
+}
+
+.search-btn {
+  background-color: var(--btn-color);
+  border: none;
+  color: white;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  margin-left: 15px;
+  width: 65px;
+  font-size: 13px;
+}
+
+.main-search i {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 3px;
+
+}
+
+.menu-item p {
+  font-weight: 500;
+  font-size: 18px;
+
+}
+
+.menu-item i {
+  padding: 5px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+
+
+.drop-menu {
+  position: absolute;
+  z-index: 100000;
+  background: white;
+  top: 40px;
+  width: 100%;
+}
+
+.drop-menu p {
+  font-size: 10px;
+
+}
+
+
+.change-bg {
+  background-color: #88888885;
+  border-radius: 4px;
+}
+
+
+
+
+.drop-categore app-side-bar::after {
+  content: "";
+  top: -30px;
+  right: 5px;
+  width: 0;
+  position: absolute;
+  border-width: 15px 15px 15px 15px;
+  border-style: solid;
+  border-color: transparent transparent rgba(221, 221, 221, 0.164) transparent;
+}
+
+.drob-downMenu {
+  position: relative;
+}
+
+.drop-categore {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  direction: ltr;
+}
+
+.icon-wrapper:hover .drop-categore {
+  display: block;
+}
+
+.icon-wrapper {
+  cursor: pointer;
+}
+
+.acc-item {
+  font-size: 20px;
+}
+
+.acc-item:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.logOut {
+  color: var(--btn-color);
+}
+
+
+
+.cartQty {
+  position: relative;
+}
+
+.cartQty .qty {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  background-color: #f68b1e;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}

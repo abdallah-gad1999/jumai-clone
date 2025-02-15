@@ -1,0 +1,45 @@
+@media only screen and (min-width: 992px) {
+ 
+    .cart-container {
+        direction: ltr;
+    }
+    
+}
+
+.add-to-cart {
+    position: relative;
+    height: 50px;
+
+}
+
+.add-to-cart button {
+    padding: 13px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.add-to-cart i {
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    color: white;
+    right: 15px;
+    transform: translatey(-62%);
+}
+
+
+.contact-us {
+    font-size: 20px;
+    border: 1px solid #f68b1e;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    height: 44px;
+
+}
+
+.contact-us button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #f68b1e;
+}

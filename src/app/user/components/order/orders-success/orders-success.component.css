@@ -1,0 +1,10 @@
+.not-order-found p,.not-order-found a {
+  font-size: 13px
+}
+
+.item-img{
+  height: 60px;
+}
+.item-img img{
+  height: 60px;
+}

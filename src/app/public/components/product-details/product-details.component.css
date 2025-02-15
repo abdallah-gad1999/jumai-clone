@@ -1,0 +1,50 @@
+/* الأساسيات */
+.prd-info,
+.prd-imgs {
+  width: 100%;
+  /* الشاشة الصغيرة */
+}
+
+.details-container {
+  margin-top: 10px;
+}
+
+.info {
+  background-color: #fff;
+}
+
+/* شاشة كبيرة (992px فأكثر) */
+@media only screen and (min-width: 992px) {
+  .details-container {
+    justify-content: space-between;
+    /* توزيع العناصر بشكل أفقي */
+  }
+
+  .sec-info {
+    display: flex;
+    width: 75%;
+    /* الصور والمعلومات */
+    padding: 10px;
+  }
+
+  .prd-imgs {
+    width: 38%;
+    /* جزء الصور */
+
+  }
+
+  .bgr-white {
+    background-color: white;
+  }
+
+  .prd-info {
+    width: 62%;
+    /* جزء المعلومات */
+  }
+
+  .side-section {
+    width: 23%;
+    height: fit-content;
+    /* العمود الجانبي */
+  }
+}

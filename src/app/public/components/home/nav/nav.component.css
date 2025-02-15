@@ -1,0 +1,42 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  background-color: #E60400;
+  object-fit: cover;
+}
+
+.banner img {
+  height: 50px;
+  overflow: hidden;
+  display: block;
+  align-items: center;
+}
+
+#content-container {
+  background-image: url('/assets/images/BG.png');
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 90;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .banner img {
+    content: url('/assets/images/ubdate/banners/desktopAR-lg.png');
+    background-size: auto;
+    object-fit: cover;
+    height: 100%;
+  }
+
+
+}

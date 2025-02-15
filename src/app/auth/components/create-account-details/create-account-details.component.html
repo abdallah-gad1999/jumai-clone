@@ -1,0 +1,80 @@
+<div
+  class="m-auto d-flex align-items-center justify-content-center"
+  aria-label="قسم انشاء حساب جديد"
+>
+  <div class="container-auth py-4">
+    <section
+      class="banner d-flex flex-column gap-3 align-items-center"
+      aria-label="البانر"
+    >
+      <img class="banner-img" src="/assets/images/jumia-icon.png" alt="Jumia Icon" />
+      <h6 class="welcome-jmia">مرحبًا بكم في Jumia</h6>
+      <p>اكتب البيانات الخاصة بك حتى يمكنك الاستمتاع بحسابك على ‎Jumia</p>
+    </section>
+
+    <form (ngSubmit)="saveUserData()" #form="ngForm" aria-label="قائمة انشاء الحساب" class="py-4">
+      <div class="d-flex flex-column gap-3 align-items-center justify-content-center">
+
+        <div class="col-12 d-flex inp-sec">
+          <input
+            class="col-12 form-inp"
+            type="text"
+            name="userName"
+            id="userName"
+            [(ngModel)]="userData.lastName"
+            required
+          />
+          <label for="userName">الاسم الأخير*</label>
+        </div>
+
+        <div class="col-12 d-flex inp-sec">
+          <input
+            class="col-12 form-inp"
+            type="text"
+            name="userAdress"
+            id="userAdress"
+            [(ngModel)]="userData.address"
+            required
+          />
+          <label for="userAdress">العنوان*</label>
+        </div>
+
+        <div class="col-12 d-flex inp-sec">
+          <input
+            class="col-12 form-inp"
+            type="number"
+            name="userPhone"
+            id="userPhone"
+            [(ngModel)]="userData.phone"
+            required
+          />
+          <label for="userPhone">الهاتف*</label>
+        </div>
+
+        <div class="col-12 text-center" aria-label="إرسال البيانات">
+          <button class="main-btn log-btn col-12" type="submit">
+            الاستمرار
+          </button>
+        </div>
+
+        <span class="mt-2 text-center legal-argemnts" aria-label="الشروط والأحكام">
+          <p class="f-10">من خلال الضغط على الاستمرار فأنت توافق على</p>
+          <a class="f-10 rout-link" href="#">الشروط والأحكام</a>
+        </span>
+
+      </div>
+
+      <div class="text-center mt-2">
+        <p class="f-10">
+          لمزيد من الدعم، يمكنك زيارة مركز المساعدة أو الاتصال بفريق خدمة العملاء.
+        </p>
+        <img
+          class="mt-4"
+          style="height: 15px; cursor: pointer"
+          src="/assets/images/JumiaLogo.png"
+          alt="Jumia Logo"
+        />
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+.prd-item {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.1s;
+  padding: 15px;
+  clip-path: inset(0% 0% 0% 0%);
+  cursor: pointer;
+}
+
+.prd-item:hover {
+
+  clip-path: inset(-5% -5% -5% -5%);
+  box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prd-item:hover~.prd-title p {
+
+  color: var(--btn-color);
+}
+
+.prd-items {
+  flex-wrap: wrap;
+}
+
+.item-img {
+  display: flex;
+  position: relative;
+}
+
+.prd-img {
+  height: 200px;
+  display: flex;
+}
+
+.addTo-weshlist {
+  position: absolute;
+  left: 10px;
+  height: 25px;
+  width: 25px;
+  bottom: 0;
+  color: var(--btn-color);
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.addToCart {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.addToCart a {
+  display: flex;
+  justify-content: end;
+}
+
+.addToCart a:hover {
+  color: var(--btn-color);
+}
+
+
+
+.prd-item {
+  width: 49%;
+}
+
+@media only screen and (min-width: 992px) {
+  .cart-Btn {
+    visibility: hidden;
+  }
+
+  .prd-item {
+    width: 24%;
+  }
+
+  .prd-item:hover .cart-Btn {
+    visibility: visible;
+  }
+
+}

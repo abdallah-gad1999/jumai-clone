@@ -1,0 +1,44 @@
+.sec {
+  background-color: white;
+  margin: auto;
+  border-radius: 4px;
+  direction: rtl;
+}
+*{
+  overflow: hidden;
+}
+.sec-container {
+  border-radius: 4px;
+}
+
+.sec-container h6 {
+  background-color: black;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+}
+
+.sec div {
+  border: none;
+  padding-top: 0 !important;
+  padding: 20px;
+
+  width: 33% !important;
+  margin-bottom: 10px;
+}
+
+.sec div:hover {
+  box-shadow: 0px 0 4px 1px #dddddd8a;
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  .sec div {
+    width: 16% !important;
+  }
+}

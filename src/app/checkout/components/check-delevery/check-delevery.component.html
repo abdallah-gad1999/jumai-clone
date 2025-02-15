@@ -1,0 +1,66 @@
+<div class="sec-container col-12 my-2" *ngIf="order$ | async as order">
+  <div class="bg-white b-4">
+    <section class="header und-line" aria-label="عنوان الصفحة">
+      <div class="d-flex px-2 py-1 gap-2 align-items-center">
+        <h1>{{ order.step }}</h1>
+        <i
+          class="bi bi-check-circle-fill d-flex"
+          [ngStyle]="{ color: order?.selectedDelivery ? 'green' : '#ddd' }"
+        ></i>
+        <p>1. تفاصيل التوصيل</p>
+      </div>
+    </section>
+
+    <section aria-label="كيفية التوصيل">
+      <div class="m-3">
+        <!-- محطة الاستلام -->
+        <section class="py-3 und-line" aria-label="محطة الاستلام">
+          <div class="header d-flex justify-content-between">
+            <div class="d-flex gap-2 align-items-start">
+              <input
+                type="radio"
+                name="delivery"
+                value="pickup"
+                [(ngModel)]="selectedDelivery"
+              />
+              <span>
+                <p class="title">محطة الاستلام FREE</p>
+                <span class="f-10"> يتم التوصيل يوم ٠٣ فبراير </span>
+              </span>
+            </div>
+            <i class="bi bi-shop main-color"></i>
+          </div>
+        </section>
+
+        <!-- توصيل للمنزل -->
+        <section class="py-3 und-line" aria-label="توصيل للمنزل">
+          <div class="header d-flex justify-content-between">
+            <div class="d-flex gap-2 align-items-start">
+              <input
+                type="radio"
+                name="delivery"
+                value="home"
+                [(ngModel)]="selectedDelivery"
+              />
+              <span>
+                <p class="title">توصيل للمنزل (ابتداء من 35 جنية)</p>
+                <span class="f-10"> يتم التوصيل يوم ٠٣ فبراير </span>
+              </span>
+            </div>
+            <i class="bi bi-truck main-color"></i>
+          </div>
+        </section>
+
+        <!-- زر تأكيد تفاصيل التسليم -->
+        <section
+          class="p-3 d-flex justify-content-end"
+          aria-label="تأكيد العنوان"
+        >
+          <button class="main-btn" (click)="confirmDelivery()">
+            تأكيد تفاصيل التسليم
+          </button>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>

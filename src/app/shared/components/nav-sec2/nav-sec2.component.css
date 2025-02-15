@@ -1,0 +1,34 @@
+.item p {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--btn-color);
+  letter-spacing: 1px;
+}
+
+.pay-item p,
+.pay-item i {
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.pay-item:hover i,
+.pay-item:hover p {
+  color: var(--Azure-Blue) !important;
+}
+
+.pay-logo{
+  height: 10px;
+}
+
+.lang-logo{
+  height: 15px;
+  border-radius: 50%;
+}
+
+.lang-item{
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}

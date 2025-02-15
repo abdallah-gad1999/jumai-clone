@@ -1,0 +1,46 @@
+<div class="cnt p-0 d-flex flex-wrap details-container">
+  <div class="sec-info bgr-white d-flex flex-wrap col-12 b-4">
+    <section class="prd-imgs col-12 col-md-4 p-2">
+      <app-product-images></app-product-images>
+    </section>
+
+    <section class="prd-info col-12 col-md-8 p-1">
+      <div class="info">
+        <app-product-info />
+      </div>
+      <div>
+        <app-product-offers />
+      </div>
+    </section>
+  </div>
+
+  <div class="side-section col-12 b-4">
+    <app-delivery class="b-4" />
+  </div>
+</div>
+
+<!-- المحتوى السفلي -->
+<div class="cnt p-0 d-flex flex-wrap details-container sec-2">
+  <!-- المحتوى الرئيسي -->
+  <div
+    class="sec-info p-0 d-flex flex-wrap col-12 col-md-12 b-4"
+    aria-label="تفاصيل إضافية"
+  >
+    <section class="col-12">
+      <app-product-specifications />
+    </section>
+    <section class="col-12">
+      <app-product-reviews />
+    </section>
+  </div>
+
+  <!-- العمود الجانبي -->
+  <div class="side-section col-12 col-lg-4 b-4">
+    <section aria-label="منتجات ذات صلة">
+      <app-seller-info />
+    </section>
+    <section class="cart-btn">
+      <app-cart-btn />
+    </section>
+  </div>
+</div>

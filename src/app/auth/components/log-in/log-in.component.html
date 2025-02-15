@@ -1,0 +1,107 @@
+<div
+  class="m-auto d-flex align-items-center justify-content-center bg-white"
+  aria-label="قسم تسجيل الدخول"
+>
+  <div class="container-auth py-4">
+    <section
+      class="banner d-flex flex-column gap-3 align-items-center"
+      aria-label="البانر"
+    >
+      <img
+        class="banner-img"
+        src="/assets/images/jumia-icon.png"
+        alt="Jumia Logo"
+      />
+      <h6 class="welcome-jmia">مرحبًا بكم في Jumia</h6>
+      <p>اكتب بريدك الإلكتروني لتسجيل الدخول أو إنشاء حساب على ‎ Jumia</p>
+    </section>
+
+    <form aria-label="قائمة تسجيل الدخول" class="py-4" (submit)="logIn()">
+      <div
+        class="d-flex flex-column gap-3 align-items-center justify-content-center"
+      >
+        <div class="col-12 d-flex flex-column inp-sec">
+          <input
+            class="col-12 form-inp"
+            type="email"
+            name="email"
+            id="email"
+            required
+            [(ngModel)]="userData.email"
+            pattern="[a-zA-Z]{3,30}[0-9]{0,10}@(yahoo|gmail)\.(com|org)$"
+            #email="ngModel"
+          />
+          <label for="email">عنوان البريد الإلكتروني*</label>
+          @if(email.invalid && email.touched){
+          <div class="text-danger f-10">
+            @if(email.errors?.['required']){
+            <p>هذا الحقل مطلوب</p>
+            } @if(email.errors?.['pattern']){
+            <p>يجب ان يكون البريد الالكتروني صحيح</p>
+            }
+          </div>
+
+          }
+        </div>
+        <div class="col-12 d-flex flex-column inp-sec">
+          <input
+            class="col-12 form-inp"
+            type="password"
+            name="password"
+            id="password"
+            required
+            [(ngModel)]="userData.password"
+            #password="ngModel"
+            pattern="[a-zA-Z0-9]{7,20}$"
+          />
+          <label for="password">رمز تسجيل الدخول*</label>
+          @if(password.invalid && password.touched){
+          <div class="text-danger f-10">
+            @if(password.errors?.['required']){
+            <p>هذا الحقل مطلوب</p>
+            } @if(password.errors?.['pattern']){
+            <p>يجب ان يكون هناك 7 ارقام او أحرف فأكثر</p>
+            }
+          </div>
+          }
+        </div>
+        <div class="col-12 text-center" aria-label="زر تسجيل الدخول">
+          <button class="main-btn log-btn col-12" type="submit">
+            تسجيل الدخول
+          </button>
+        </div>
+        <span
+          class="mt-2 text-center legal-argemnts"
+          aria-label="الشروط والأحكام"
+        >
+          <p class="f-10">من خلال الضغط على تسجيل الدخول فأنت توافق على</p>
+          <a class="f-10 rout-link" href="#">الشروط والأحكام</a>
+        </span>
+      </div>
+      <div class="fasebook-log mt-2" aria-label="تسجيل الدخول عن طريق فيسبوك">
+        <button disabled class="main-btn log-btn col-12" type="button">
+          تسجيل الدخول باستخدام فيسبوك
+        </button>
+        <i class="bi bi-facebook"></i>
+      </div>
+      <div class="text-center mt-2">
+        <a class="f-10 rout-link" [routerLink]="['/auth/createAccount']">
+          ليس لديك حساب؟
+        </a>
+      </div>
+      <div class="text-center mt-2">
+        <p class="f-10">
+          لمزيد من الدعم، يمكنك زيارة مركز المساعدة أو الاتصال بفريق خدمة
+          العملاء.
+        </p>
+        <img
+          class="mt-4"
+          style="height: 15px"
+          src="/assets/images/JumiaLogo.png"
+          alt="Jumia Logo"
+          [routerLink]="['/public/home']"
+        />
+      </div>
+    </form>
+  </div>
+</div>

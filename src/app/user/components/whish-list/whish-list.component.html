@@ -1,0 +1,54 @@
+<div>
+  <section class="header und-line col-12">
+    <h6 class="m-0 p-3">المنتجات المحفوظة</h6>
+  </section>
+  <section aria-label="التقييمات الخاصة بالعميل"></section>
+
+  <!-- ✅ عرض المنتجات المحفوظة كصفوف -->
+  <section
+    *ngIf="wishlistProducts.length > 0; else emptyWishlist"
+    class="saved-products container py-4"
+  >
+    <div
+      *ngFor="let product of wishlistProducts"
+      class="product-card row align-items-center p-3 border rounded mb-3"
+    >
+      <!-- صورة المنتج -->
+      <div class="col-3 col-md-2 text-center">
+        <img [src]="product.images" alt="صورة المنتج" class="product-image img-fluid rounded" />
+      </div>
+
+      <!-- بيانات المنتج -->
+      <div class="col-6 col-md-7">
+        <h6 class="f-15">{{ product.name }}</h6>
+        <span class="price fw-bold">السعر: {{ product.price }} جنيه</span>
+        
+      </div>
+
+      <!-- زر الإزالة -->
+      <div class="col-3 col-md-3 text-end">
+        <button class="remove-btn btn btn-danger" (click)="removeFromWishlist(product.id)">
+          إزالة ❌
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ حالة عدم وجود منتجات محفوظة -->
+  <ng-template #emptyWishlist>
+    <section
+      class="not-found d-flex gap-4 flex-column align-items-center py-4 col-12 col-lg-6 m-auto"
+      aria-label="لا يوجد تقييمات متاحة"
+    >
+      <img src="/assets/images/ubdate/user/wishList.svg" alt="" />
+      <h6 class="f-15">لم تقم بحفظ أي منتجات بعد!</h6>
+      <p>
+        يمكنك حفظ المنتجات التي تعجبك للرجوع إليها لاحقًا، أو تقييم المنتجات بعد
+        استلامها لمنح مستخدمي جوميا أفضل تجربة تسوق.
+      </p>
+      <div class="main-btn">
+        <a routerLink="/public/home" class="text-white">متابعة التسوق</a>
+      </div>
+    </section>
+  </ng-template>
+</div>

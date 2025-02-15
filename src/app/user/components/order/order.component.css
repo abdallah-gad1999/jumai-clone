@@ -1,0 +1,10 @@
+.rout-item{
+  font-size: 15px;
+  color: var(--btn-color);
+  cursor: pointer;
+}
+
+
+.rout-active{
+border-bottom: 2px solid;
+}

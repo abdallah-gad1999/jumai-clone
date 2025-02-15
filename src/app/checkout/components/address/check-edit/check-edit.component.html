@@ -1,0 +1,155 @@
+<div class="sec-container col-12">
+  <div class="bg-white b-4">
+    <section class="header und-line" aria-label="عنوان الصفحة">
+      <div class="d-flex px-2 py-1 gap-2 align-items-center">
+        <i class="bi bi-check-circle-fill d-flex"></i>
+        <p>1. عنوان العميل</p>
+      </div>
+    </section>
+    <section class="und-line" aria-label="دليل العناوين">
+      <section class="p-3">
+        <p class="f-15">تعديل العنوان</p>
+        <form
+          class="d-flex flex-column gap-4 justify-content-between my-3"
+          #newAdressForm="ngForm"
+          (ngSubmit)="addNewAdress()"
+        >
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between"
+            aria-label="اسم المستخدم"
+          >
+            <div class="item">
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="أدخل اسمك الأول
+              "
+                [(ngModel)]="newAdress.firstName"
+              />
+              <label for="firstname">الاسم الاول</label>
+            </div>
+
+            <div class="item">
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="أدخل اسمك الأخير
+              "
+                [(ngModel)]="newAdress.lastName"
+              />
+              <label for="lastName">الاسم الثاني</label>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between"
+            aria-label="ارقام الهاتف الخاصة بالمستخدم"
+          >
+            <div class="item">
+              <input
+                type="number"
+                id="firstNumber"
+                name="firstNumber"
+                placeholder="أدخل رقم هاتفك
+              "
+                [(ngModel)]="newAdress.phoneNumber"
+                pattern="^(015|011|010|012)[0,9]{8}"
+              />
+              <label for="firstNumber">رقم الهاتف</label>
+            </div>
+
+            <div class="item">
+              <input
+                type="number"
+                id="anotherNumber"
+                name="anotherNumber"
+                placeholder="أدخل رقم هاتفك الإضافي
+              "
+                [(ngModel)]="newAdress.Number"
+                pattern="^(015|011|010|012)[0,9]{8}"
+              />
+              <label for="anotherNumber">رقم هاتف اضافي</label>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between"
+            aria-label="العنوان"
+          >
+            <div class="item big-item col-12">
+              <input
+                type="text"
+                id="firstNumber"
+                name="firstNumber"
+                placeholder="أدخل عنوانك
+              "
+                [(ngModel)]="newAdress.address"
+              />
+              <label for="firstNumber">العنوان</label>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between"
+            aria-label="تفاصيل أكثر نحو العنوان"
+          >
+            <div class="item big-item col-12">
+              <input
+                type="text"
+                id="firstNumber"
+                name="firstNumber"
+                placeholder="أدخل معلومات إضافية
+              "
+                [(ngModel)]="newAdress.addressDetails"
+              />
+              <label for="firstNumber">العنوان</label>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-between"
+            aria-label="المدينة والمنطقة الخاصة بالمستخدم"
+          >
+            <div class="item">
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="أدخل المنطقة
+              "
+                [(ngModel)]="newAdress.cety"
+              />
+              <label for="firstname">ادخل المنطقة</label>
+            </div>
+
+            <div class="item">
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="أدخل المدينة
+              "
+                [(ngModel)]="newAdress.town"
+              />
+              <label for="lastName">ادخل المدينة</label>
+            </div>
+          </div>
+          <section
+            class="d-flex justify-content-end gap-3 p-2"
+            aria-label="تأكيد العنوان"
+          >
+            <button
+              class="cancel-btn f-15"
+              [routerLink]="['/checkout/address']"
+            >
+              الغاء
+            </button>
+            <button class="main-btn f-15" type="submit">تأكيد العنوان</button>
+          </section>
+        </form>
+      </section>
+    </section>
+  </div>
+</div>

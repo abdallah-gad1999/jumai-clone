@@ -1,0 +1,217 @@
+<div *ngIf="isMobile">
+  <app-order-summary />
+</div>
+<div class="sec-container col-12" *ngIf="order$ | async as order">
+  <div class="bg-white b-4">
+    <section class="header und-line" aria-label="عنوان الصفحة">
+      <div class="d-flex px-2 py-1 gap-2 align-items-center">
+        <i
+          class="bi bi-check-circle-fill d-flex"
+          [ngStyle]="{ color: order?.selectedPayment ? 'green' : '#ddd' }"
+        ></i>
+        <p>3. طريقة الدفع</p>
+      </div>
+    </section>
+    <section class="my-1" aria-label="كيفية التوصيل">
+      <div class="payment-items p-3">
+        <div class="payment-item und-line pb-2">
+          <p class="">الدفع عند التسليم</p>
+          <section class="my-3 d-flex justify-content-between">
+            <span class="d-flex gap-2">
+              <input
+                type="radio"
+                name="cash"
+                id="cash"
+                value="cash"
+                checked
+                [(ngModel)]="selectPayment"
+              />
+              <p class="title">الدفع عند الاستلام</p>
+            </span>
+            <i class="bi bi-wallet2 d-flex main-color"></i>
+          </section>
+
+          <section class="delevry-card p-3 gap-2 py-2 f-10">
+            <ol class="und-line py-2">
+              <li>يتم قبول الدفع بالجنيه المصري فقط</li>
+              <li>
+                يرجى توفير المبلغ المحدد فقط عند الدفع لاحتمالية عدم توافر فئات
+                نقدية صغيرة مع مندوب التوصيل.
+              </li>
+              <li>يجب دفع ثمن المنتج قبل فتح الشحنة.</li>
+              <li>
+                فى حالة تم إرجاع المنتج طرق استرداد المبلغ المتاحة هي قسيمة
+                استرداد، تحويل بريدى، تحويل بنكى
+              </li>
+            </ol>
+            <div
+              class="d-flex gap-2 justify-content-end align-items-center f-1"
+            >
+              <p>نقبل :</p>
+              <i class="bi bi-cash-coin d-flex main-color"></i>
+            </div>
+          </section>
+        </div>
+
+        <div class="payment-item und-line">
+          <p class="">الدفع بالبطاقة</p>
+          <section class="my-3 d-flex justify-content-between">
+            <span class="d-flex gap-2">
+              <input
+                type="radio"
+                name="card"
+                id="card"
+                value="card"
+                disabled
+                [(ngModel)]="selectPayment"
+              />
+              <p class="title">الدفع بالبطاقة</p>
+            </span>
+            <img
+              src="/assets/images/ubdate/icons/jumai-pay.png"
+              alt=""
+              style="height: 25px"
+            />
+          </section>
+        </div>
+
+        <div class="payment-item" aria-label="الشراء بالتقسيط">
+          <div class="item und-line">
+            <section class="my-3 d-flex justify-content-between">
+              <span class="d-flex gap-2 align-items-start">
+                <input
+                  type="radio"
+                  name="Credit"
+                  id="Credit"
+                  value="Credit"
+                  disabled
+                  [(ngModel)]="selectPayment"
+                />
+                <div>
+                  <p class="title">قسط مع بريميوم كارد</p>
+                  <span class="f-10">قسط مشترياتك من 6- 30 شهر</span>
+                </div>
+              </span>
+              <img
+                src="/assets/images/ubdate/payment/payment.png"
+                alt=""
+                style="height: 25px"
+              />
+            </section>
+          </div>
+
+          <div class="item und-line">
+            <section class="my-3 d-flex justify-content-between">
+              <span class="d-flex gap-2 align-items-start">
+                <input
+                  type="radio"
+                  name="Banquemisr"
+                  id="Banquemisr"
+                  value="Banquemisr"
+                  disabled
+                  [(ngModel)]="selectPayment"
+                />
+                <div>
+                  <p class="title">قسط مع بنك مصر</p>
+                  <span class="f-10"
+                    >قسط مشترياتك على 9 شهور بدون فوائد برسوم إدارية 12%</span
+                  >
+                </div>
+              </span>
+              <img
+                src="/assets/images/ubdate/payment/Misr-2.png"
+                alt=""
+                style="height: 25px"
+              />
+            </section>
+          </div>
+
+          <div class="item und-line">
+            <section class="my-3 d-flex justify-content-between">
+              <span class="d-flex gap-2 align-items-start">
+                <input
+                  type="radio"
+                  name="Attijariwafa"
+                  id="Attijariwafa"
+                  value="Attijariwafa"
+                  disabled
+                  [(ngModel)]="selectPayment"
+                />
+                <div>
+                  <p class="title">قسط مع بنك التجاري وفا</p>
+                  <span class="f-10">
+                    قسط مشترياتك على 6 شهور بمصاريف اداريه
+                  </span>
+                </div>
+              </span>
+              <img
+                src="/assets/images/ubdate/payment/waffabank.png"
+                alt=""
+                style="height: 25px"
+              />
+            </section>
+          </div>
+
+          <div class="item und-line">
+            <section class="my-3 d-flex justify-content-between">
+              <span class="d-flex gap-2 align-items-start">
+                <input
+                  type="radio"
+                  name="aman"
+                  id="aman"
+                  value="aman"
+                  disabled
+                  [(ngModel)]="selectPayment"
+                />
+                <div>
+                  <p class="title">قسط مع امان</p>
+                  <span class="f-10"
+                    >اشتري طلبك دلوقتي وادفع ب أمان بعدين حتي 24 شهر ب 0%
+                    مقدم</span
+                  >
+                </div>
+              </span>
+              <img
+                src="/assets/images/ubdate/payment/aman.png"
+                alt=""
+                style="height: 25px"
+              />
+            </section>
+          </div>
+
+          <div class="item und-line">
+            <section class="my-3 d-flex justify-content-between">
+              <span class="d-flex gap-2 align-items-start">
+                <input
+                  type="radio"
+                  name="QaratBank"
+                  id="QaratBank"
+                  value="QaratBank"
+                  disabled
+                  [(ngModel)]="selectPayment"
+                />
+                <div>
+                  <p class="title">قسط مع بنك قطر الوطني</p>
+                  <span class="f-10">قسط مشترياتك على 6 شهور بفوائد </span>
+                </div>
+              </span>
+              <img
+                src="/assets/images/ubdate/payment/QNB_Logo.jpg"
+                alt=""
+                style="height: 20px"
+              />
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex justify-content-end p-3 pt-0"
+        aria-label="تأكيد وسيلة الدفع"
+      >
+        <button class="main-btn f-15" (click)="confirmPayment()">
+          تأكيد وسيلة الدفع
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

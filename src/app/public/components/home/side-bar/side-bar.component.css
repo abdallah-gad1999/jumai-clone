@@ -1,0 +1,122 @@
+.falyout {
+  height: 384px;
+  background-color: white;
+  width: 210px;
+  flex-direction: column;
+  align-items: end;
+  display: flex;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+a{
+  cursor: pointer;
+}
+
+
+.flay-box {
+  padding-top: 10px;
+  justify-content: end;
+}
+
+.flay-box p {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.submenu {
+  position: absolute;
+  width: 740px;
+  top: 0;
+  right: 210px;
+  z-index: 11;
+  height: 385px;
+
+  border-radius: 4px;
+}
+
+.sub a:hover+.menu {
+  display: block;
+  opacity: 1;
+}
+
+.cat-item {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+/* .sub:hover .menu,
+.menu:hover {
+  display: block;
+  opacity: 1;
+} */
+
+
+.submenu {
+  display: none;
+  /* إخفاء القائمة افتراضيًا */
+  position: absolute;
+  top: 0;
+  right: 210px;
+  width: 740px;
+  height: 385px;
+  z-index: 11;
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px;
+  direction: rtl;
+}
+
+.d-flex:hover .submenu,
+.submenu:hover {
+  display: block;
+  /* إظهار القائمة عند التمرير على الكاتيجوري أو القائمة نفسها */
+}
+
+
+
+
+
+.d-flex:hover .submenu {
+  display: block;
+  /* إظهار القائمة عند تمرير الماوس */
+}
+
+
+
+
+.sub-header {
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sub-item {
+  position: relative;
+
+}
+
+.sub-item ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 0px 10px;
+  padding-bottom: 15px;
+}
+
+.sub-item ul:first-child::after {
+  content: "";
+  width: 95%;
+  position: absolute;
+  border: none;
+  border-bottom: 0.1px solid #ddd;
+  bottom: 0;
+}
+
+.sub-item ul li {
+  font-size: 12px;
+  font-weight: 300;
+}

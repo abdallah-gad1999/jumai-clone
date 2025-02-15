@@ -1,0 +1,117 @@
+swiper-container {
+  width: 100%;
+  height: 52vw; /* ارتفاع نسبي يعتمد على عرض الشاشة */
+  border-radius: 5px;
+  overflow: hidden; /* لضمان أن الصور لا تتعدى الحواف */
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto; /* للحفاظ على نسبة الأبعاد الأصلية للصورة */
+  object-fit: cover;
+  padding: 0; /* إزالة الحواف */
+  border-radius: 5px; /* لضمان التوافق مع الحواف المستديرة */
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+app-main-carousel {
+  position: relative;
+}
+
+#swiper-lg {
+  display: none;
+}
+
+#swiper-sm {
+  display: block;
+}
+.cars {
+  width: 712px !important;
+}
+
+@media only screen and (min-width: 959px) {
+  swiper-container {
+    height: 384px; /* ارتفاع ثابت للشاشات الكبيرة */
+    margin: auto;
+  }
+
+  swiper-container a {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-container img {
+    width: 100%;
+    height: auto; /* الحفاظ على الأبعاد الأصلية */
+  }
+
+  #swiper-sm {
+    display: none;
+  }
+
+  #swiper-lg {
+    display: block;
+  }
+}
+
+.falyout {
+  height: 384px;
+  background-color: white;
+  width: 200px;
+  flex-direction: column;
+  align-items: end;
+  display: flex;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+.flay-box {
+  padding-top: 10px;
+}
+
+.flay-box p {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.sub a:hover + .menu {
+  display: block;
+  opacity: 1;
+}
+
+/* .sub:hover .menu,
+.menu:hover {
+  display: block;
+  opacity: 1;
+} */
+.menu {
+  width: calc(100% - 200px); /* تغطية المنطقة باستثناء السايد بار */
+  position: absolute;
+  height: 370px;
+  left: 200px; /* محاذاة بداية النافذة مع نهاية السايد بار */
+  top: 0;
+  z-index: 111;
+  background-color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  visibility: hidden;
+}
+.sub:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}

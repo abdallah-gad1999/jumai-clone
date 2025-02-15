@@ -1,0 +1,62 @@
+<div *ngIf="reviews | async; else notFound">
+  <section class="reviews-container bg-white b-4 mb-3 mx-2 mx-lg-0">
+    <div
+      class="headers und-line d-flex justify-content-between align-items-center"
+    >
+      <h6 class="p-3 pb-1 prd-head res-f">آراء العملاء الموثقة</h6>
+    </div>
+    <div class="reviews-card d-flex px-3 py-2">
+      <div class="col-12 px-lg-4">
+        <p class="f-15">تعليقات المنتج (1)</p>
+        <div class="reviews-items" aria-label="تعليقات المستخدمين" role="list">
+          <div class="reviews-item und-line py-1" role="listitem">
+            <div class="stars py-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <h6 class="py-2">جيدة جدا</h6>
+            <p class="py-1 pb-3 f-15">
+              رائعة بسم الله ما شاء الله والمندوب محترم شكرا جوميا
+            </p>
+            <div
+              class="d-flex justify-content-between align-items-center"
+              aria-label="معلومات التقييم"
+            >
+              <div class="py-1 gap-2 d-flex" aria-label="تاريخ التقييم وبواسطة">
+                <p class="comment-date f-15">١٧-٠٣-٢٠٢٤</p>
+                <p class="comment-user f-15">بواسطه ‎Mohammed‎</p>
+              </div>
+              <div
+                class="check-review d-flex gap-2 align-items-center text-success"
+                aria-label="التحقق من التقييم"
+              >
+                <i class="bi bi-check2-circle f-15"></i>
+                <p class="f-15">تم التحقق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #notFound>
+  <section
+    class="not-reviews-found bg-white b-4 mb-4 white d-flex gap-4 flex-column align-items-center py-4 px-2"
+    aria-label="لا يوجد تقييمات متاحة"
+  >
+    <img
+      src="/assets/images/ubdate/user/notFoundRev.svg"
+      alt="لا توجد تقييمات"
+    />
+    <h6 class="f-15">لا توجد تقييمات بعد</h6>
+    <p>يمكنك تقييم المنتج بعد استلامه.</p>
+    <div class="main-btn" [routerLink]="['/public/home']">
+      <a href="" class="text-white">متابعة التسوق</a>
+    </div>
+  </section>
+</ng-template>

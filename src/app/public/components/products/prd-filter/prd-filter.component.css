@@ -1,0 +1,54 @@
+
+.cat-menue a {
+  color: black;
+
+}
+
+.cat {
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.cat-header {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.cat:hover {
+  background-color: #ddd;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--btn-color);
+  /* لتغيير اللون */
+  accent-color: #fff;
+}
+
+.search {
+  position: relative;
+  width: 100%;
+}
+
+.search i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.search input {
+  outline: none;
+  border: 1px solid #888;
+  border-radius: 15px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 600 !important;
+}

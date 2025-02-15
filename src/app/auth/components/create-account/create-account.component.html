@@ -1,0 +1,94 @@
+<body  class="special-page">
+  <div
+    class="d-flex align-items-center bg-white justify-content-center"
+    aria-label="قسم انشاء حساب جديد"
+  >
+    <div class="container-auth py-3">
+      <section
+        class="banner d-flex flex-column gap-2 align-items-center"
+        aria-label="البانر"
+      >
+        <img class="banner-img" src="/assets/images/jumia-icon.png" alt="" />
+        <h6 class="welcome-jmia">مرحبًا بكم في Jumia</h6>
+        <p class="">
+          اكتب بريدك الإلكتروني لأنشاء حساب والاستمتاع بالتسوق علي ‎ Jumia
+        </p>
+      </section>
+
+      <form
+        aria-label="قائمة انشاء الحساب"
+        class="py-4"
+        (submit)="createAccount()"
+      >
+        <div
+          class="d-flex flex-column gap-2 align-items-center justify-content-center"
+        >
+          <div class="col-12 d-flex inp-sec">
+            <input
+              class="col-12 form-inp"
+              type="text"
+              name="firstName"
+              id="firstName"
+              [(ngModel)]="user.firstName"
+            />
+            <label for="firstName">الاسم الاول*</label>
+          </div>
+          <div class="col-12 d-flex inp-sec">
+            <input
+              class="col-12 form-inp"
+              type="text"
+              name="email"
+              id="email"
+              [(ngModel)]="user.email"
+            />
+            <label for="email">عنوان البريد الالكتروني*</label>
+          </div>
+          <div class="col-12 d-flex inp-sec">
+            <input
+              class="col-12 form-inp"
+              type="text"
+              name="password"
+              id="password"
+              [(ngModel)]="user.password"
+            />
+            <label for="password">الرمز السري*</label>
+          </div>
+          <div class="col-12 text-center" aria-label="زر انشاء الحساب">
+            <button class="main-btn log-btn col-12" type="submit">
+              أنشاء الحساب
+            </button>
+          </div>
+          <span
+            class="mt-1 text-center legal-argemnts"
+            aria-label="الشروط والاحكام"
+          >
+            <p class="f-10">من خلال الضغط علي تسجيل الدخول فأنت توافق علي</p>
+            <a class="f-10 rout-link" href="#">الشروط والاحكام</a>
+          </span>
+        </div>
+        <div class="fasebook-log mt-1" aria-label="انشاء حساب عن طريق الفيسبوك">
+          <button disabled class="main-btn log-btn col-12" type="submit">
+            انشاء حساب بأستخدام فيسبوك
+          </button>
+          <i class="bi bi-facebook"></i>
+        </div>
+        <div class="text-center mt-1" [routerLink]="['/auth/logIn']">
+          <a class="f-10 rout-link">لديك حساب؟</a>
+        </div>
+        <div class="text-center mt-1">
+          <p class="f-10">
+            لمزيد من الدعم ، يمكنك زيارة مركز المساعدة أو الاتصال بفريق خدمة
+            العملاء.
+          </p>
+          <img
+            class="mt-2"
+            style="height: 15px; cursor: pointer"
+            src="/assets/images/JumiaLogo.png"
+            alt=""
+            [routerLink]="['/public/home']"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

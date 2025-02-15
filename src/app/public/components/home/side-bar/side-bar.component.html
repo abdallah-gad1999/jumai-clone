@@ -1,0 +1,517 @@
+<div class="falyout">
+  <div class="d-flex cat-item">
+    <a
+    (click)="onCategorySelect('fashion')"
+
+      class="d-flex flay-box w-100"
+      appHoverColor
+    >
+      <p class="">ازياء</p>
+      <span class="cat-i">
+        <i class="fa-solid fa-shirt"></i>
+      </span>
+    </a>
+
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" (click)="onsubCatChange('حريمي')" appHoverColor>ازياء حريمي</th>
+          </ul>
+          <ul class="gap-1">
+            <li>كارديجن و بلوفرات</li>
+            <li>جواكيت و بلاطي</li>
+            <li>هوديز و سويتشيرتات</li>
+            <li>جينز و بنطلونات</li>
+            <li>توب و تيشيرت</li>
+            <li>فساتين و سالوبيتات</li>
+            <li>ملابس البيت و اللانجري</li>
+            <li>ملابس رياضية</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>ازياء رجالي</th>
+          </ul>
+          <ul class="gap-1">
+            <li>كارديجن و بلوفرات</li>
+            <li>جواكيت و بلاطي</li>
+            <li>هوديز و سويتشيرتات</li>
+            <li>جينز و بنطلونات</li>
+            <li>توب و تيشيرت</li>
+            <li>ملابس رياضية</li>
+            <li>تي شيرتات و بولو</li>
+            <li>بدل</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>ازياء اطفالي</th>
+          </ul>
+          <ul class="gap-1">
+            <li>ملابس الأولاد</li>
+            <li>ملابس بناتي</li>
+            <li>احذية وملابس اولادي</li>
+            <li>احذية وملابس بناتي</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+
+      class="d-flex flay-box w-100"
+      (click)="onCategorySelect('phone')"
+
+      appHoverColor
+    >
+      <p class="">موبايل وتابلت</p>
+      <span class="cat-i">
+        <i class="bi bi-phone"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>موبايل</th>
+          </ul>
+          <ul class="gap-1">
+            <li>موبايل اندرويد</li>
+            <li>موبايلات IOS</li>
+            <li>هواتف</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>تابلت</th>
+          </ul>
+          <ul class="gap-1">
+            <li>تابلت</li>
+            <li>ايباد</li>
+            <li>تابلت تعليمي</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>
+              اكسسوارات الموبايل والتابلت
+            </th>
+          </ul>
+          <ul class="gap-1">
+            <li>سماعات ذكية</li>
+            <li>سماعات رأس بلوتوث</li>
+            <li>سماعات</li>
+            <li>باور بانك</li>
+            <li>جرابات الموبايل</li>
+            <li>اكسسوارات التابلت</li>
+            <li>سكرين بروتكتور</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      (click)="onCategorySelect('beauty')"
+      appHoverColor
+      aria-label="الصحة والجمال"
+    >
+      <p class="">الصحة والجمال</p>
+      <span class="cat-i">
+        <i class="bi bi-balloon-heart"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>العناية الشخصية</th>
+          </ul>
+          <ul class="gap-1">
+            <li>العناية بالفم</li>
+            <li>العناية بالمرأة</li>
+            <li>حلاقة وإزالة الشعر</li>
+            <li>العناية بالرجل</li>
+            <li>مزيل عرق</li>
+            <li>جل الاستحمام</li>
+            <li>العناية بالوجة</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>العناية بالشعر</th>
+          </ul>
+          <ul class="gap-1">
+            <li>اجهزة تصفيف الشعر</li>
+            <li>تصفيف الشعر</li>
+            <li>شامبو وبلسم وسيرم للشعر</li>
+            <li>صبغات للشعر</li>
+            <li>اكستنشن للشعر</li>
+            <li>اكسسوارات الشعر</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>لعناية بالبشرة</th>
+          </ul>
+          <ul class="gap-1">
+            <li>الجسم</li>
+            <li>عيون</li>
+            <li>العناية بالوجة</li>
+            <li>مستحضرات اليدين والقدمين</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      (click)="onCategorySelect('home-product')"
+
+      appHoverColor
+      aria-label="المنزل والاثاث"
+    >
+      <p class="">المنزل والاثاث</p>
+      <span class="cat-i">
+        <i class="bi bi-house"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>مستلزمات بيتك</th>
+          </ul>
+          <ul class="gap-1">
+            <li>ديكور المنزل</li>
+            <li>الإضاءة</li>
+            <li>مستلزمات السرير</li>
+            <li>مستلزمات الحمام</li>
+            <li>التخزين والتنظيم</li>
+            <li>معدات تنظيف</li>
+            <li>مستلزمات الحفلات</li>
+            <li>ديكور موسمي</li>
+            <li>لمبات</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>اثاث منزلي</th>
+          </ul>
+          <ul class="gap-1">
+            <li>غرف معيشة</li>
+            <li>غرفة نوم</li>
+            <li>غرف طعام</li>
+            <li>وحدات تلفزيون</li>
+            <li>وحدات تخزين</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>مستلزمات المطبخ</th>
+          </ul>
+          <ul class="gap-1">
+            <li>أواني الطهي</li>
+            <li>مستلزمات الخبز</li>
+            <li>أدوات تقديم</li>
+            <li>أواني زجاجية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      (click)="onCategorySelect('kitchen')"
+      appHoverColor
+      aria-label="اجهزة منزلية"
+    >
+      <p class="">اجهزة منزلية</p>
+      <span class="cat-i">
+        <i class="bi bi-tv"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>اجهزة الطبخ</th>
+          </ul>
+          <ul class="gap-1">
+            <li>قلايات بدون زيت</li>
+            <li>الخلاطات</li>
+            <li>ميكرويف</li>
+            <li>كبة</li>
+            <li>خلاطات</li>
+            <li>محضر طعام</li>
+            <li>خلاطات يدوية</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul       (click)="onCategorySelect('home-Housewares')"
+          >
+            <th class="sub-header" appHoverColor>الاجهزة المنزلية</th>
+          </ul>
+          <ul class="gap-1">
+            <li>المكانس والعناية بالأرضيات</li>
+            <li>مكواة عادية وبخار</li>
+            <li>مروحة شباك</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>الاجهزة الكهربائية</th>
+          </ul>
+          <ul class="gap-1">
+            <li>الثلاجات</li>
+            <li>فريزر</li>
+            <li>غسالات اطباق</li>
+            <li>غسالات ملابس ومجففات</li>
+            <li>بوتجازات</li>
+            <li>شفاطات بمدخنة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+
+    <a
+    (click)="onCategorySelect('tv')"
+      class="d-flex flay-box w-100"
+      appHoverColor
+      aria-label="تلفزيونات وصوتيات"
+
+    >
+      <p class="">التلفزيونات والصوتيات</p>
+      <span class="cat-i">
+        <i class="bi bi-speaker"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>التلفزيونات والريسيفرات</th>
+          </ul>
+          <ul class="gap-1">
+            <li>التلفزيونات</li>
+            <li>تلفزيونات ذكية</li>
+            <li>شاشة تلفزيون كبيرة</li>
+            <li>تلفزيونات 32 بوصة</li>
+            <li>تلفزيونات 43 بوصة</li>
+            <li>تلفزيونات 50 بوصة</li>
+            <li>تلفزيونات 55 بوصة</li>
+            <li>تلفزيونات 65 بوصة</li>
+            <li>ريسفرات</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>الصوتيات</th>
+          </ul>
+          <ul class="gap-1">
+            <li>سماعات</li>
+            <li>أنظمة المسرح المنزلي</li>
+            <li>سماعات رأس</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>الكاميرا وملحقاتها</th>
+          </ul>
+          <ul class="gap-1">
+            <li>كاميرات ديجيتال</li>
+            <li>عدسات الكاميرا</li>
+            <li>بروجكتور</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      [routerLink]="['/public/products/phone']"
+      appHoverColor
+      aria-label="بقالة"
+    >
+      <p class="">بقالة</p>
+      <span class="cat-i">
+        <i class="bi bi-basket"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>معدات التنظيف المنزلي</th>
+          </ul>
+          <ul class="gap-1">
+            <li>تخزين الطعام, فويل , وورق المنيوم</li>
+            <li>أطباق ورق وبلاستيك</li>
+            <li>كوبايات ورق وبلاستيك</li>
+            <li>أكياس القمامة</li>
+            <li>مناديل ورق</li>
+            <li>مناديل الوجه</li>
+            <li>بطاريات منزلية</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>أدوات التنظيف المنزلى</th>
+          </ul>
+          <ul class="gap-1">
+            <li>مستلزمات غسيل الأطباق</li>
+            <li>معطر الجو</li>
+            <li>منظفات مطبخ</li>
+            <li>منظفات حمام</li>
+            <li>منظفات الأرضيات و جميع الأغراض</li>
+            <li>منظفات زجاج</li>
+            <li>مطهرات</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>مستلزمات الغسيل</th>
+          </ul>
+          <ul class="gap-1">
+            <li>منظفات الملابس</li>
+            <li>منعم ملابس</li>
+            <li>مزيل البقع</li>
+            <li>ماكينات ازلة الوبر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      [routerLink]="['/public/products/computer']"
+      appHoverColor
+      aria-label="الكمبيوتر"
+    >
+      <p class="">الكمبيوتر</p>
+      <span class="cat-i">
+        <i class="bi bi-laptop"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>
+              أجهزة الكمبيوتر المكتبية و لابتوب
+            </th>
+          </ul>
+          <ul class="gap-1">
+            <li>لاب توب 2 في 1</li>
+            <li>لابتوب العاب</li>
+            <li>أجهزة الكمبيوتر المكتبية</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>الكمبيوتر وملحقاتة</th>
+          </ul>
+          <ul class="gap-1">
+            <li>مستلزمات لاب توب</li>
+            <li>حقائب وجرابات اللاب توب</li>
+            <li>لوحة مفاتيح</li>
+            <li>ماوس كمبيوتر</li>
+            <li>تنظيف الكمبيوتر وإصلاح</li>
+            <li>كابلات الكمبيوتر</li>
+            <li>طابعات</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>منتجات الشبكات</th>
+          </ul>
+          <ul class="gap-1">
+            <li>محولات الشبكة</li>
+            <li>راوتر</li>
+            <li>اكسس بوينت لاسلكية</li>
+            <li>موزع شبكة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex cat-item">
+    <a
+      href=""
+      class="d-flex flay-box w-100"
+      [routerLink]="['/public/products/phone']"
+      appHoverColor
+      aria-label="العاب"
+    >
+      <p class="">العاب</p>
+      <span class="cat-i">
+        <i class="bi bi-controller"></i>
+      </span>
+    </a>
+    <!-- القائمة الفرعية مرتبطة بالعنصر الرئيسي -->
+    <div class="submenu">
+      <div class="sub-items d-flex">
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>بلايستيشن 5</th>
+          </ul>
+          <ul class="gap-1">
+            <li>بلايستيشن 5</li>
+            <li>ألعاب فيديو</li>
+            <li>أجهزة تحكم</li>
+            <li>بطاقات</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>بلايستيشن 4</th>
+          </ul>
+          <ul class="gap-1">
+            <li>ألعاب فيديو</li>
+            <li>أجهزة تحكم</li>
+            <li>بطاقات</li>
+            <li>أجهزة تحكم</li>
+          </ul>
+        </div>
+        <div class="col-4 sub-item">
+          <ul>
+            <th class="sub-header" appHoverColor>اكس بوكس</th>
+          </ul>
+          <ul class="gap-1">
+            <li>اجهزة تحكم</li>
+            <li>اكسسوارت</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

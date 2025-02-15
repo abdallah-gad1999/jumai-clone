@@ -1,0 +1,115 @@
+.prd-brice {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.prd-brice h2 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.flash-sell {
+  margin: auto;
+  background-color: #DF1501;
+}
+
+.store p {
+  background-color: var(--bg-dark-blue);
+}
+
+
+.discount-badge {
+  background-color: #fff0e6;
+  /* لون خلفية الخصم */
+  color: #ff6600;
+  /* لون النص */
+  padding: 5px 5px;
+  /* مساحة داخلية */
+  border-radius: 5px;
+  /* زوايا دائرية */
+  font-weight: bold;
+  /* نص عريض */
+  font-size: 14px;
+  /* حجم الخط */
+}
+
+.prices {
+  display: flex;
+  padding: 5px;
+  direction: ltr;
+}
+
+.price-cnt {
+  border: 1px solid #DF1501;
+}
+
+.old-price {
+  text-decoration: line-through;
+  /* خط مشطوب */
+  color: #888;
+  /* لون النص القديم */
+  font-size: 10px;
+  /* حجم الخط */
+}
+
+.new-price {
+  color: #333;
+  /* لون النص الجديد */
+  font-weight: bold;
+  /* نص عريض */
+  font-size: 15px;
+  /* حجم الخط */
+}
+
+.und-line {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+
+.und-line::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: #dddddd67;
+  width: 100%;
+  bottom: 0;
+}
+
+.add-to-cart {
+  position: relative;
+}
+
+.add-to-cart button {
+  padding: 13px;
+  font-size: 15px;
+
+
+}
+
+.add-to-cart i {
+  position: absolute;
+  font-size: 25px;
+  top: 50%;
+  color: white;
+  right: 15px;
+  transform: translatey(-50%);
+}
+
+/* large screen */
+@media only screen and (min-width: 992px) {
+  .prd-brice h2 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .old-price {
+    font-size: 14px;
+  }
+
+  .new-price {
+    font-size: 20px;
+  }
+
+}

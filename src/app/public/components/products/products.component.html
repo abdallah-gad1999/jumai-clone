@@ -1,0 +1,10 @@
+
+<div class="cnt" style="margin-top: 20px"></div>
+<div class="cnt d-flex flex-column gap-4 flex-lg-row justify-content-between">
+  <section class="d-none d-lg-flex col-lg-3 b-4 mt-4 bg-white">
+    <app-prd-filter [category]="catItems" class="col-12" />
+  </section>
+  <section class="col-12 col-lg-9 b-4 my-lg-4">
+    <app-product-list [products]="products$" [category]="catItems" />
+  </section>
+</div>

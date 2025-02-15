@@ -1,0 +1,21 @@
+.header-container{
+  height: 74px;
+  background-color: #fff;
+}
+.contact-us{
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--Azure-Blue);
+}
+
+.title{
+font-size: 12px;
+font-weight: 400;
+color: #888;
+}
+
+
+.icon{
+  font-size: 20px;
+  color: #888;
+}

@@ -1,0 +1,16 @@
+.sec-hader{
+  background-color: var(--Azure-Blue);
+  direction: rtl;
+}
+*{
+  overflow: hidden;
+}
+@media only screen and (max-width: 959px) {
+  .sec-1 {
+    content: url('/assets/images/ubdate/banners/find-more/1sm.png');
+  }
+  .sec-2 {
+    content: url('/assets/images/ubdate/banners/find-more/2sm.png');
+  }
+
+}

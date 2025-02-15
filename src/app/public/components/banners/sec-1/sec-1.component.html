@@ -1,0 +1,17 @@
+<div class="sec-container sec-sm">
+  <a href="" *ngFor="let item of banner | slice : 0 : 4" appCardHover>
+    <img [src]="item.img" alt="banner-1" />
+  </a>
+</div>
+
+<div class="sec-container sec-lg">
+  <a
+    href=""
+    class="col-2"
+    *ngFor="let item of banner"
+    [routerLink]="[item.path]"
+    appCardHover
+  >
+    <img [src]="item.img" alt="banner-1" />
+  </a>
+</div>

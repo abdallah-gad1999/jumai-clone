@@ -1,0 +1,70 @@
+<div class="prd-container">
+  <section
+    class="header bg-lg-white d-flex align-items-center und-line"
+    aria-label="العنوان والتفاصيل"
+  >
+    <div>
+      <div class="d-flex gap-3 p-3 bg-white align-items-center">
+        <span class="cat-title" *ngFor="let item of category">{{
+          item.name
+        }}</span>
+        <span class="total-prd" *ngIf="products as products">
+          الاجمالي ({{ products.length }})
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- التحقق إذا كانت المنتجات موجودة -->
+  <section
+    *ngIf="products as products; else noProducts"
+    class="prd-items d-flex py-3 px-2 gap-2 bg-lg-white"
+    aria-label="قائمة المنتجات"
+  >
+    <!-- التكرار على المنتجات -->
+    <div
+      *ngFor="let product of products; let i = index"
+      (click)="navigate(product.id)"
+      class="prd-item d-flex flex-column col-6 col-sm-6 col-md-3 bg-white b-4 p-2"
+    >
+      <div class="item-img d-flex" aria-label="صورة المنتج">
+        <img [src]="product.images" alt="Product Image" class="prd-img b-4" />
+        <i class="bi bi-heart addTo-weshlist"></i>
+      </div>
+      <div class="prd-title py-2" aria-label="عنوان المنتج">
+        <p class="f-10">{{ product.name || "اسم المنتج" }}</p>
+      </div>
+      <div class="item-price">
+        <p class="new-price f-15">
+          {{
+            calculateDiscountedPrice(product.price, product.discount)
+              | currency : "EGP" : "symbol"
+          }}
+        </p>
+        <span>
+          <p class="old-price">{{ product.price }}</p>
+        </span>
+        <div class="addToCart col-12" aria-label="الاضافة الي السلة">
+          <a href="" class="f-10 d-flex align-items-center gap-1 pb-4">
+            <ng-container *ngIf="product.isFeatured">
+              <p>منتجات مدعومة</p>
+              <i class="bi bi-exclamation-circle d-flex"></i>
+            </ng-container>
+          </a>
+          <button class="cart-Btn main-btn f-10 col-12">
+            الاضافة الي السلة
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- عرض صورة في حال عدم وجود منتجات -->
+  <ng-template class="bg-white" #noProducts>
+    <img
+      src="https://cdni.iconscout.com/illustration/premium/thumb/sorry-item-not-found-illustration-download-in-svg-png-gif-file-formats--available-product-tokostore-pack-e-commerce-shopping-illustrations-2809510.png?f=webp"
+      alt="No products found"
+      class="bg-white col-12"
+    />
+  </ng-template>
+</div>

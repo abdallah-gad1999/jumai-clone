@@ -1,0 +1,11 @@
+
+
+
+@media only screen and (max-width: 992px) {
+  .side-bar{
+    order: 2;
+  }
+  .router-content{
+    order: 1;
+  }
+}

@@ -1,0 +1,64 @@
+.container-all{
+  direction: ltr;
+
+}
+.router-container {
+  margin-top: 20px !important;
+
+}
+.router-container .cnt{
+  position: relative;
+  overflow: visible;
+}
+
+.cars {
+  width: 712px !important;
+}
+
+.sec-1,
+.sec-2 {
+  width: 210px;
+  height: 384px;
+}
+
+.banner-head{
+  height: 50px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.sec{
+  width: 99%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.ban-1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+@media only screen and (max-width: 959px) {
+  .router-container {
+    margin-top: 10px !important;
+  }
+
+  .sec-1,
+  .sec-2 {
+    display: none;
+  }
+
+  .cars {
+    width: 100% !important;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .sec-1 {
+    display: none;
+  }
+}

@@ -1,0 +1,115 @@
+<div class="filter-container" aria-label="قائمة الفلاتر">
+  <ng-container *ngFor="let cat of category; let i = index">
+    <section class="und-line">
+      <div class="header d-flex flex-column gap-1">
+        <p class="cat-header p-3 py-2 b pb-0">الفئة</p>
+        <a class="cat-title cat py-1 px-3" href="">{{ cat.name }}</a>
+
+        <div class="cat-menue d-flex flex-column gap-1">
+          <ng-container *ngFor="let entry of cat.subCat">
+            <a class="px-4 py-1 cat " >{{ entry }} </a>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+
+    <section class="und-line" aria-label="فلترة بحسب الخامة">
+      <div class="warpaper d-flex flex-column p-3 gap-3">
+        <div class="header d-flex flex-column">
+          <p class="cat-header">الخامة</p>
+        </div>
+        <div class="search">
+          <input type="text" class="py-1" placeholder="البحث" />
+          <i class="bi bi-search"></i>
+        </div>
+        <ng-container *ngFor="let mat of cat.material">
+          <div class="gap-3" aria-label="انواع الماركات">
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="checkbox" [id]="mat" [name]="mat" />
+              <label class="px-2    " [for]="mat">{{ mat }}</label>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+
+    <section class="und-line" aria-label="فلترة بحسب اللون">
+      <div class="warpaper d-flex flex-column p-3 gap-3">
+        <div class="header d-flex flex-column">
+          <p class="cat-header">اللون</p>
+        </div>
+        <div class="search">
+          <input type="text" class="py-1" placeholder="البحث" />
+          <i class="bi bi-search"></i>
+        </div>
+        <ng-container *ngFor="let color of cat.color">
+          <div class="gap-3" aria-label="انواع الألوان">
+            <div class="d-flex align-items-center">
+              <input type="checkbox" [id]="color" [name]="color" />
+              <label class="px-2 " [for]="color">{{ color }}</label>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+
+    <section class="und-line" aria-label="المنتجات التي تحتوي علي خصومات">
+      <div class="p-3 d-flex gap-2">
+        <input type="checkbox" name="cridet" id="cridet" />
+        <label for="cridet">فلترة بحسب المنتجات التي تحتوي علي خصم</label>
+      </div>
+    </section>
+
+    <section class="und-line" aria-label="فلترة بحسب الماركة">
+      <div class="warpaper d-flex flex-column p-3 gap-3">
+        <div class="header d-flex flex-column">
+          <p class="cat-header">الماركة</p>
+        </div>
+        <div class="search">
+          <input type="text" class="py-1" placeholder="البحث" />
+          <i class="bi bi-search"></i>
+        </div>
+        <ng-container *ngFor="let mat of cat.material">
+          <div class="gap-3" aria-label="انواع الماركات">
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="checkbox" [id]="mat" [name]="mat" />
+              <label class="px-2 " [for]="mat">{{ mat }}</label>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+
+    <section class="und-line" aria-label="فلترة بحسب نسبة الخصم">
+      <div class="warpaper d-flex flex-column p-3 gap-3">
+        <div class="header d-flex flex-column">
+          <p class="cat-header">نسبة الخصم</p>
+        </div>
+        <ng-container >
+          <div class="gap-3" aria-label="انواع الماركات">
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="radio" [id]="" [name]="" />
+              <label class="px-2 "> 50% او أكثر</label>
+            </div>
+               <div class="d-flex align-items-center">
+              <input class="checkbox" type="radio" [id]="" [name]="" />
+              <label class="px-2" > 40% او أكثر</label>
+            </div>
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="radio" [id]="" [name]="" />
+              <label class="px-2 "> 30% او أكثر</label>
+            </div>
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="radio" [id]="" [name]="" />
+              <label class="px-2 "> 20% او أكثر</label>
+            </div>
+            <div class="d-flex align-items-center">
+              <input class="checkbox" type="radio" [id]="" [name]="" />
+              <label class="px-2 "> 10% او أكثر</label>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+  </ng-container>
+</div>

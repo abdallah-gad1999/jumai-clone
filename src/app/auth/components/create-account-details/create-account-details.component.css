@@ -1,0 +1,71 @@
+.banner-img {
+  height: 60px;
+}
+
+.container-auth {
+  height: 100vh;
+}
+
+.banner h6 {
+  font-weight: 500;
+}
+
+.banner p {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+
+.inp-sec {
+  position: relative;
+}
+.form-inp {
+  height: 55px;
+  outline: none;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.form-inp:hover {
+  border: 1px solid black;
+}
+
+.inp-sec label ,.fasebook-log i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+  background-color: white;
+  color: #888;
+}
+
+
+.inp-sec input:focus ~ label,
+.inp-sec:focus-within label {
+  top: 0%;
+  color: var(--btn-color);
+  font-size: 11px;
+}
+
+.log-btn{
+  height: 55px;
+}
+.rout-link{
+  color: var(--btn-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.fasebook-log{
+  position: relative;
+}
+.fasebook-log button{
+  background-color: var(--Facebook-Blue);
+}
+.fasebook-log i{
+ color: white;
+ background-color: transparent;
+ font-size: 20px;
+}

@@ -1,0 +1,13 @@
+@media only screen and (max-width: 959px) {
+  .sec-1 {
+    content: url('/assets/images/home-banners/find-offers/latest/DB375X300AR-2.gif'
+      );
+  }
+
+  .sec-2 {
+    content: url('/assets/images/home-banners/find-offers/latest/375x300-1.png');
+  }
+}
+*{
+  overflow: hidden;
+}

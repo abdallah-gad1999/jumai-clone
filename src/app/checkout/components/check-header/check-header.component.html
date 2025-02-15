@@ -1,0 +1,53 @@
+<div class="cnt">
+  <div
+    class="header-container gap-3 gap-lg-0 px-3 px-lg-0 d-flex align-items-center justify-content-start justify-content-lg-between"
+  >
+    <section class="d-flex gap-3 align-items-center">
+      <a
+        href=""
+        class="d-flex"
+        *ngIf="!isMobile"
+        [routerLink]="['/public/home']"
+      >
+        <img style="height: 23px" src="/assets/images/JumiaLogo.png" alt="" />
+      </a>
+      <div class="d-flex" (click)="goBack()">
+        <i
+          class="bi bi-arrow-right d-flex"
+          style="font-size: 20px"
+          *ngIf="isMobile"
+        ></i>
+      </div>
+    </section>
+
+    <section>
+      <h6 class="m-0">حدد طريقة التسليم</h6>
+    </section>
+
+    <section class="f-10 d-flex gap-3 align-items-center" *ngIf="!isMobile">
+      <div class="d-flex gap-2 align-items-center">
+        <i class="bi bi-telephone-plus d-flex icon"></i>
+        <div>
+          <p class="title">تحتاج مساعدة؟</p>
+          <a href="" class="contact-us">اتصل بنا</a>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 align-items-center">
+        <i class="bi bi-reply icon"></i>
+        <div>
+          <p class="title">عملية ارجاع</p>
+          <p class="title">ٍسهلة</p>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 align-items-center">
+        <i class="bi bi-shield-lock-fill icon"></i>
+        <div>
+          <p class="title">مدفوعات</p>
+          <p class="title">أمنة</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

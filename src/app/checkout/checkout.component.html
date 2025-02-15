@@ -1,0 +1,24 @@
+<div class="cnt">
+  <app-check-nav *ngIf="!isMobile" />
+</div>
+<div class="bg-white header" appHeaderFixed>
+  <app-check-header />
+</div>
+<div
+  class="checkout-container d-flex justify-content-center justify-content-lg-between mt-3 cnt"
+>
+  <div *ngIf="isMobile" class="router col-12">
+    <router-outlet />
+  </div>
+
+  <ng-container *ngIf="!isMobile" class="d-flex">
+    <section class="checkout-steps d-flex flex-column" aria-label="خطوات الطلب">
+      <router-outlet />
+      <app-check-delevery />
+      <app-check-payment />
+    </section>
+    <section class="order-Summary" aria-label="ملخص الطلبات">
+      <app-order-summary />
+    </section>
+  </ng-container>
+</div>

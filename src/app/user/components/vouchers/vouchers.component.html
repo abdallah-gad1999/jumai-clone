@@ -1,0 +1,27 @@
+<div class="section-container col-12">
+  <section class="header und-line col-12" aria-label="رأس الصفحة">
+    <h6 class="m-0 p-3">قسائم الشراء</h6>
+  </section>
+  <section
+    class="header und-line col-12 gap-2 d-flex"
+    aria-label="التبديل بين الطلبات الملغية والصحيحة"
+  >
+    <div
+      class="rout-item mx-2"
+      [routerLink]="['/user/vouchers/active']"
+      routerLinkActive="rout-active"
+    >
+      <p class="p-3 py-2">نشط</p>
+    </div>
+    <div
+      class="rout-item"
+      [routerLink]="['/user/vouchers/inActive']"
+      routerLinkActive="rout-active"
+    >
+      <p class="p-3 py-2">غير نشط</p>
+    </div>
+  </section>
+  <section class="p-3  col-12 col-lg-6 m-auto ">
+    <router-outlet />
+  </section>
+</div>

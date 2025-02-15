@@ -1,0 +1,68 @@
+<div class="prd-container bg-white">
+  <section
+    class="header bg-lg-white d-flex align-items-center und-line"
+    aria-label="العنوان والتفاصيل"
+  >
+    <div>
+      <div class="d-flex align-items-center f-15 gap-3 p-3">
+        <span class="total-prd"> اجمالي المنتجات </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- التحقق إذا كانت المنتجات موجودة -->
+  <section
+    *ngIf="products$ as products; else noProducts"
+    class="prd-items d-flex py-3 px-2 gap-2 bg-lg-white"
+    aria-label="قائمة المنتجات"
+  >
+    <!-- التكرار على المنتجات -->
+    <div
+      *ngFor="let product of products; let i = index"
+      class="prd-item d-flex flex-column col-6 col-sm-6 col-md-3 bg-white b-4 p-2"
+    >
+      <div class="item-img d-flex" aria-label="صورة المنتج">
+        <img
+          [src]="product.images?.[1]"
+          alt="Product Image"
+          class="prd-img b-4"
+        />
+        <div class="addTo-weshlist">
+          <i class="bi bi-heart"></i>
+        </div>
+      </div>
+      <div class="prd-title py-2" aria-label="عنوان المنتج">
+        <p class="f-10">{{ product.name || "اسم المنتج" }}</p>
+      </div>
+      <div class="item-price">
+        <p class="new-price f-15">{{ product.price || "غير متوفر" }} جنية</p>
+        <span>
+          <p class="old-price">{{ product.oldPrice || "" }} جنية</p>
+        </span>
+        <div class="addToCart col-12" aria-label="الاضافة الي السلة">
+          <a href="" class="f-10 d-flex align-items-center gap-1 pb-4">
+            <ng-container *ngIf="product.isFeatured">
+              <p>منتجات مدعومة</p>
+              <i class="bi bi-exclamation-circle d-flex"></i>
+            </ng-container>
+          </a>
+          <button class="cart-Btn main-btn f-10 col-12">
+            الاضافة الي السلة
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- عرض صورة في حال عدم وجود منتجات -->
+  <ng-template
+    #noProducts
+    class="bg-white align-items-center justify-content-center"
+  >
+    <img
+      src="/assets/images/ubdate/icons/notFound.svg"
+      alt="No products found"
+      class="d-flex text center"
+    />
+  </ng-template>
+</div>

@@ -1,0 +1,44 @@
+<div class="section-container">
+  <section class="header und-line col-12">
+    <h6 class="m-0 p-3">نظرة عامة نحو الحساب</h6>
+  </section>
+  <section
+    class="p-3 d-flex justify-content-between"
+    aria-label="معلومات الحساب"
+  >
+    <div class="card-item b-4">
+      <div class="title und-line">
+        <p class="p-3">معلومات الحساب</p>
+      </div>
+      <div
+        class="user-details p-3 d-flex flex-column gap-2"
+        aria-label="المعلومات الخاصة بالمستخدم"
+        *ngIf="user$ | async as user"
+      >
+        <p class="userName">{{ user.firstName }}</p>
+        <p class="useremail">{{ user.email }}</p>
+      </div>
+    </div>
+
+    <div class="card-item b-4 und-line">
+      <div
+        class="title d-flex align-items-center justify-content-between und-line"
+      >
+        <p class="p-3">جهات الاتصال</p>
+        <span class="idet px-3 d-flex" aria-label="تعديل جهات الاتصال">
+          <i class="bi bi-pen-fill"></i>
+        </span>
+      </div>
+
+      <div
+        class="user-details p-3 d-flex flex-column gap-2"
+        aria-label="المعلومات الخاصة بالتوصيل"
+      >
+        <h6>العنوان الافتراضي للشحن:</h6>
+        <p class="delev-name">{{ address || "لا يوجد" }}</p>
+        <p class="delev-adress">{{ address || "لا يوجد" }}</p>
+        <p class="delev-phone">{{ address || "لا يوجد" }}</p>
+      </div>
+    </div>
+  </section>
+</div>

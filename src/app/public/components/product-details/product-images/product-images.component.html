@@ -1,0 +1,38 @@
+<div *ngIf="product$">
+  <div class="slider" #slider>
+    <img
+      *ngFor="let item of product$.images"
+      [src]="item"
+      [alt]="product$.name"
+    />
+  </div>
+</div>
+
+<div class="prd-img und-line" *ngIf="product$">
+  <div class="active-item">
+    <img [src]="product$.images[0]" alt="" class="active" #active />
+  </div>
+  <div
+    class="d-flex align-items-center justify-content-start gap-3 py-2"
+  >
+    @for(img of product$.images; track $index){
+    <img
+      class="notActive"
+      [src]="img"
+      [alt]="product$.name"
+      (click)="changeImg(img)"
+    />
+    }
+  </div>
+</div>
+
+<div class="share-prd p-2" aria-label="مشاركة هذا المنتج">
+  <h6 class="f-15">مشاركة هذا المنتج</h6>
+  <div class="d-flex gap-3">
+    <a href="">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href=""> <i class="bi bi-twitter-x"></i> </a>
+  </div>
+</div>
+

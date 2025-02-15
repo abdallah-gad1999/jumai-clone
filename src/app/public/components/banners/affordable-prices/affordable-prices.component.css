@@ -1,0 +1,53 @@
+*{
+  overflow: hidden;
+}
+
+
+
+.sec-header{
+  background-color: var(--Champagne-color) !important;
+}
+
+.sec-container {
+  background-color: white;
+}
+
+.sec-1 {
+  height: 40px;
+  background-color: black;
+  color: white;
+}
+
+.sec-2 img {
+  width: 100%;
+}
+
+.sec-2 {
+  justify-content: center !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .sec-1 {
+    background-color: white;
+    color: black;
+  }
+
+  .box-1 {
+    content: url('/assets/images/ubdate/banners/best-price/DB600x200ARB.png');
+  }
+
+  .box-2 {
+    content: url('/assets/images/ubdate/banners/best-price/sec-2.jpg');
+  }
+
+  .box-3{
+    content: url('/assets/images/ubdate/banners/best-price/sec-2/sec-2-1.jpg');
+  }
+  .box-4{
+    content: url('/assets/images/ubdate/banners/best-price/sec-2/sec-2-2.jpg');
+  }
+
+  .box-5{
+    content: url('/assets/images/ubdate/banners/best-price/sec-2/sec-3-3.jpg');
+  }
+}
